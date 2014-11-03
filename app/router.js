@@ -13,7 +13,7 @@ Router.map(function() {
   this.route('login');
   this.route ('setpassword');
 
-  this.route('rhci');
+  this.route('rhci', { path: '/deployments/new' });
   this.route('deployments');
 
   this.resource('deployment', function() {
