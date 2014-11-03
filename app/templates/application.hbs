@@ -1,0 +1,11 @@
+{{#if isLoggedIn}}
+  {{render "topbar"}}
+{{/if}}
+
+{{#if showMainMenu}}
+  {{render "mainmenu"}}
+{{/if}}
+
+<div {{bind-attr class="isLoggedIn:container"}}>
+  {{outlet}}
+</div>
