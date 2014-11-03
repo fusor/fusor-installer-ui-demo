@@ -1,8 +1,8 @@
-# Rhci
+# fuser-demo
 
-This README outlines the details of collaborating on this Ember application.
+This is a live mockup / prototype for fusor, a [Foreman](https://github.com/theforeman/foreman) plugin that installs several [Red Hat](http://www.redhat.com) products.
 
-A short introduction of this app could easily go here.
+This prototype built using the MVC Javascript Framework [EmberJS](http://emberjs.com/) and [Ember CLI](http://www.ember-cli.com/). It is inspired by the screencast [Lightning Fast HTML & CSS Prototyping with ember-cli](https://www.youtube.com/watch?v=twMhNVvnebA).
 
 ## Prerequisites
 
