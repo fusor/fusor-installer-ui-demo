@@ -2,7 +2,7 @@
 
 module.exports = function(environment) {
   var ENV = {
-    modulePrefix: 'rhci',
+    modulePrefix: 'fusor-demo',
     environment: environment,
     baseURL: '/',
     locationType: 'hash',

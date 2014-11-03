@@ -23,7 +23,7 @@ export default Ember.Route.extend({
 
   actions: {
     notImplemented: function() {
-      alert('This link is not implemented in the RHCI demo prototype');
+      alert('This link is not implemented in the fusor-demo prototype');
     }
   }
 
