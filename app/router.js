@@ -28,6 +28,7 @@ Router.map(function() {
     this.route('review');
   });
 
+  this.route('satellite/configure');
 });
 
 export default Router;

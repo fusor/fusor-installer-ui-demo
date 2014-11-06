@@ -1,39 +1,18 @@
+<br />
 <form class="form form-horizontal">
 
-  {{text-f name=name label="Organization Name"}}
+ {{select-f label='Organization'
+            content=organizations
+            optionLabelPath="content.name"
+            optionValuePath="content.id"
+            selection=content.organization
+            value=content.organization.id
+            prompt="Select Existing Organization"
+            }}
 
-  {{text-f name="name" label="Label"}}
 
-  {{textarea-f name="description" label="Description"}}
+            Or create New One
 
-  {{radio-button-f name="assignGroup" value=assignAll label="Assign All. Assign all hosts with no organization to this one"}}
-
-  {{radio-button-f name="assignGroup" value=manuallyAssign label="Manually Assign. Manually select and assign hosts with no organization"}}
-
-    {{#if manuallyAssign}}
-     <div class="col-md-6 col-md-offset-1">
-        <table class="table table-bordered table-striped small">
-          <tr>
-            <th> {{input type='checkbox'}} </th>
-            <th> Name </th>
-            <th> Operating System </th>
-            <th> Environment </th>
-            <th> Model </th>
-            <th> Host group </th>
-          </tr>
-          <tr>
-            <td> {{input type='checkbox'}} </td>
-            <td> system.example.com </td>
-            <td> RedHat 7.0 </td>
-            <td> production </td>
-            <td> RHEV-Hypervisor </td>
-            <td> Base/Database </td>
-          </tr>
-        </table>
-     </div>
-    {{/if}}
-
-  {{radio-button-f name="assignGroup" value=skipAssign label="Skip Assigning Hosts: Skip host assignment for now; you can return to this later"}}
 
   <div style='float:right'>
       <button {{action 'cancel'}} class='btn btn-default'>Cancel</button>
