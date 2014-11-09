@@ -18,7 +18,10 @@ Router.map(function() {
 
   this.resource('deployment', function() {
     this.resource('satellite', function() {
-      this.route('configure');
+      this.resource('configure', function() {
+        this.route('new-organization');
+        this.route('new-environment');
+      });
       this.route('subscriptions');
       this.route('products');
     });
@@ -28,7 +31,6 @@ Router.map(function() {
     this.route('review');
   });
 
-  this.route('satellite/configure');
 });
 
 export default Router;

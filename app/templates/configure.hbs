@@ -1,0 +1,44 @@
+<div class="row">
+  <div class='col-md-12'>
+        <br />
+        <form class="form form-horizontal">
+         {{#select-f label='Organization'
+                    content=organizations
+                    optionLabelPath="content.name"
+                    optionValuePath="content.id"
+                    value=selectedOrganization.id
+                    prompt="Select Existing Organization"
+                    }}
+
+                    or {{#link-to 'configure.new-organization' class='btn btn-success btn-sm'}}Create New Organization{{/link-to}}
+         {{/select-f}}
+
+        <br />
+
+         {{#select-f label='Environment'
+                    content=environments
+                    optionLabelPath="content.name"
+                    optionValuePath="content.id"
+                    selection=content.environment
+                    value=content.environment.id
+                    prompt="Select Existing Environment"
+                    }}
+
+                    or {{#link-to 'configure.new-organization' class='btn btn-success btn-sm'}}Create New Environment{{/link-to}}
+         {{/select-f}}
+
+        </div>
+
+
+          <div style='float:right'>
+              <button {{action 'cancel'}} class='btn btn-default'>Cancel</button>
+              {{#link-to 'satellite.subscriptions' class='btn btn-primary'}}Next{{/link-to}}
+          </div>
+
+        </form>
+  </div>
+
+  <div class='col-md-12'>
+        {{outlet}}
+  </div>
+</div>
