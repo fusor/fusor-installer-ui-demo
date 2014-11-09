@@ -2,6 +2,10 @@ import Ember from 'ember';
 
 export default Ember.ObjectController.extend({
   fields: {},
+  labelName: function() {
+    return this.get('fields.name');
+  }.property('fields.name'),
+
   actions: {
     cancel: function() {
       this.transitionToRoute('configure');

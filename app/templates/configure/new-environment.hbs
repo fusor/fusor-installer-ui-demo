@@ -4,6 +4,8 @@
         <form class="form form-horizontal">
 
          {{text-f label="Environment Name" value=fields.name}}
+         {{text-f label="Label" value=labelName}}
+         {{textarea-f label="Description" value=fields.description}}
 
           <button {{action 'cancel'}} class='btn btn-default btn-sm'>Cancel</button>
           <button {{action 'createEnvironment'}} class='btn btn-primary btn-sm'>Create</button>
