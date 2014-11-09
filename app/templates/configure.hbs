@@ -19,12 +19,11 @@
                     content=environments
                     optionLabelPath="content.name"
                     optionValuePath="content.id"
-                    selection=content.environment
-                    value=content.environment.id
+                    value=selectedEnvironment.id
                     prompt="Select Existing Environment"
                     }}
 
-                    or {{#link-to 'configure.new-organization' class='btn btn-success btn-sm'}}Create New Environment{{/link-to}}
+                    or {{#link-to 'configure.new-environment' class='btn btn-success btn-sm'}}Create New Environment{{/link-to}}
          {{/select-f}}
 
         </div>

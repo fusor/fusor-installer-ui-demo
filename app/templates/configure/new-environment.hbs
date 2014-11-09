@@ -1,1 +1,11 @@
-new environment
+<div class="row">
+  <div class='col-md-12'>
+        <br />
+        <form class="form form-horizontal">
+
+         {{text-f label="Environment Name" value=fields.name}}
+
+          <button {{action 'cancel'}} class='btn btn-default btn-sm'>Cancel</button>
+          <button {{action 'createOrganization'}} class='btn btn-primary btn-sm'>Create</button>
+  </div>
+</form>

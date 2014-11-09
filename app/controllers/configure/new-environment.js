@@ -2,7 +2,7 @@ import Ember from 'ember';
 
 export default Ember.ObjectController.extend({
   needs:['configure'],
-  createdOrganization: {},
+  createdEnvironment: {},
   fields: {},
   actions: {
     cancel: function() {
@@ -10,9 +10,9 @@ export default Ember.ObjectController.extend({
     },
     createOrganization: function() {
       var self = this;
-      var organization = this.store.createRecord('organization', this.get('fields'));
-      organization.save().then(function() {
-        self.set('createdOrganization', organization)
+      var environment = this.store.createRecord('environment', this.get('fields'));
+      environment.save().then(function() {
+        self.set('createdEnvironment', environment)
         self.transitionToRoute('configure');
       }, function() {
         alert('error');
