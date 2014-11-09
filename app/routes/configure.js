@@ -10,12 +10,6 @@ export default Ember.Route.extend({
   actions: {
     cancel: function() {
       alert('cancel');
-      // this.controllerFor('application').set('isLoggedIn', true);
-      // if(this.controllerFor('application').get('isPasswordSet')) {
-      //   this.transitionTo('rhci');
-      // } else {
-      //    this.transitionTo('setpassword');
-      // }
     },
     createOrganization: function() {
       var organization = this.controllerFor('configure/new-organization');
