@@ -4,7 +4,7 @@ export default Ember.ObjectController.extend({
   fields: {},
   actions: {
     cancel: function() {
-      alert('cancel');
+      this.transitionToRoute('configure');
     },
     createOrganization: function() {
       var self = this;
