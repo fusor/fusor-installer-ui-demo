@@ -1,24 +1,27 @@
 import DS from 'ember-data';
 
-export default DS.Model.extend({
-  name: DS.attr('string'),
-});
 var Environment = DS.Model.extend({
   name: DS.attr('string'),
+  label: DS.attr('string'),
+  description: DS.attr('string'),
 });
 
 Environment.reopenClass({
     FIXTURES: [
-        {
+       {
           id: 1,
-          name: 'development',
+          name: 'Library',
        },
        {
           id: 2,
-          name: 'test',
+          name: 'development',
        },
        {
           id: 3,
+          name: 'test',
+       },
+       {
+          id: 4,
           name: 'production',
        }
   ]

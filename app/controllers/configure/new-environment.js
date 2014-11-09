@@ -3,7 +3,9 @@ import Ember from 'ember';
 export default Ember.ObjectController.extend({
   fields: {},
   labelName: function() {
-    return this.get('fields.name');
+    if(this.get('fields.name')) {
+      return this.get('fields.name').underscore();
+    }
   }.property('fields.name'),
 
   actions: {
