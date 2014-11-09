@@ -1,5 +1,5 @@
 <div class="row">
-  <div class='col-md-12'>
+  <div class='col-md-6'>
         <br />
         <form class="form form-horizontal">
 
@@ -10,9 +10,9 @@
                     value=selectedOrganization.id
                     selection=selectedOrganization
                     prompt="Select Existing Organization"
+                    labelSize='col-md-4' inputSize='col-md-8'
                     }}
-
-                    or {{#link-to 'configure.new-organization' class='btn btn-success btn-sm'}}Create New Organization{{/link-to}}
+                    or {{#link-to 'configure.new-organization' class=''}}Create New Organization{{/link-to}}
          {{/select-f}}
 
         <br />
@@ -24,13 +24,15 @@
                     value=selectedEnvironment.id
                     selection=selectedEnvironment
                     prompt="Select Existing Environment"
+                    labelSize='col-md-4' inputSize='col-md-8'
                     }}
 
-                    or {{#link-to 'configure.new-environment' class='btn btn-success btn-sm'}}Create New Environment{{/link-to}}
+                    or {{#link-to 'configure.new-environment' class=''}}Create New Environment{{/link-to}}
          {{/select-f}}
 
-        </div>
 
+        <br />
+        <br />
 
           <div style='float:right'>
               <button {{action 'cancel'}} class='btn btn-default'>Cancel</button>
@@ -40,7 +42,7 @@
         </form>
   </div>
 
-  <div class='col-md-12'>
+  <div class='col-md-6'>
           {{outlet}}
   </div>
 </div>
