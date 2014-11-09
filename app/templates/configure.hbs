@@ -8,7 +8,7 @@
                     optionLabelPath="content.name"
                     optionValuePath="content.id"
                     value=selectedOrganization.id
-                    selection=selectedOrganization.id
+                    selection=selectedOrganization
                     prompt="Select Existing Organization"
                     }}
 
@@ -17,11 +17,12 @@
 
         <br />
 
-         {{!#select-f label='Environment'
+         {{#select-f label='Environment'
                     content=environments
                     optionLabelPath="content.name"
                     optionValuePath="content.id"
                     value=selectedEnvironment.id
+                    selection=selectedEnvironment
                     prompt="Select Existing Environment"
                     }}
 
