@@ -41,6 +41,7 @@ Router.map(function() {
     this.route('review');
   });
 
+  this.route('hypervisor/discovered-host');
 });
 
 export default Router;
