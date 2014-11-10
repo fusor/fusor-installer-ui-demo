@@ -42,6 +42,8 @@ Router.map(function() {
   });
 
   this.route('hypervisor/discovered-host');
+  this.route('hypervisor/existing-host');
+  this.route('hypervisor/new-host');
 });
 
 export default Router;
