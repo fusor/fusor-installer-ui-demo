@@ -41,7 +41,6 @@ Router.map(function() {
     this.route('review');
   });
 
-  this.route('rhevIndex');
 });
 
 export default Router;
