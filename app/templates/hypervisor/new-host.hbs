@@ -1,1 +1,16 @@
-new host
+<form class="form form-horizontal">
+
+  {{text-f label="Name" value=name }}
+  {{select-f label='Organization'
+              content=organizations
+              optionLabelPath="content.name"
+              optionValuePath="content.id"
+              value=selectedOrganization.id
+              selection=selectedOrganization
+              }}
+
+  <div style='float:right'>
+    <button {{action 'cancel'}} class='btn btn-default btn-sm'>Cancel</button>
+    <button {{action 'createOrganization'}} class='btn btn-primary btn-sm'>Create</button>
+  </div>
+</form>
