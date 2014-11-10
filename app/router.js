@@ -31,10 +31,10 @@ Router.map(function() {
         this.route('existing-host');
         this.route('new-host');
       });
-      this.route('engine');
-      this.route('networking');
-      this.route('storage');
-      this.route('rhev-options');
+      this.resource('engine');
+      this.resource('networking');
+      this.resource('storage');
+      this.resource('rhev-options');
     });
     this.route('openstack');
     this.route('cloudforms');
