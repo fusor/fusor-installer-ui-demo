@@ -1,23 +1,23 @@
 <div class="form-group tabbed_side_nav_form row">
 
-  <ul class="nav nav-pills nav-stacked col-md-3" data-tabs="pills">
+  <ul class="nav nav-pills nav-stacked col-md-3">
       {{#link-to 'hypervisor' tagName='li'}}
         <a>Hypervisor</a>
       {{/link-to}}
 
-      {{#link-to 'rhev-engine' tagName='li'}}
+      {{#link-to 'rhev.engine' tagName='li'}}
         <a>Engine</a>
       {{/link-to}}
 
-      {{#link-to 'networking' tagName='li'}}
+      {{#link-to 'rhev.networking' tagName='li'}}
         <a>Networking</a>
       {{/link-to}}
 
-      {{#link-to 'storage' tagName='li' disabled=disableContentTab}}
+      {{#link-to 'rhev.storage' tagName='li' disabled=disableContentTab}}
         <a>Storage</a>
       {{/link-to}}
 
-      {{#link-to 'rhev-options' tagName='li' disabled=disableContentTab}}
+      {{#link-to 'rhev.rhev-options' tagName='li' disabled=disableContentTab}}
         <a>Options</a>
       {{/link-to}}
   </ul>

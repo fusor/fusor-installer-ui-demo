@@ -31,19 +31,16 @@ Router.map(function() {
         this.route('existing-host');
         this.route('new-host');
       });
-      this.resource('rhev-engine');
-      this.resource('networking');
-      this.resource('storage');
-      this.resource('rhev-options');
+      this.route('engine');
+      this.route('networking');
+      this.route('storage');
+      this.route('rhev-options');
     });
     this.route('openstack');
     this.route('cloudforms');
     this.route('review');
   });
 
-  this.route('hypervisor/discovered-host');
-  this.route('hypervisor/existing-host');
-  this.route('hypervisor/new-host');
 });
 
 export default Router;
