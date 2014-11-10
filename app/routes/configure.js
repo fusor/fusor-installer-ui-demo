@@ -14,7 +14,7 @@ export default Ember.Route.extend({
     createOrganization: function() {
       var organization = this.controllerFor('configure/new-organization');
       var self = this;
-      var organization = this.store.createRecord('organization', organization.get('fields'));
+//      var organization = this.store.createRecord('organization', organization.get('fields'));
       organization.save().then(function() {
         self.transitionTo('configure');
       }, function() {
