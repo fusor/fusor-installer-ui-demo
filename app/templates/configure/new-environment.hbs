@@ -8,8 +8,12 @@
         {{text-f label="Label" value=labelName labelSize='col-md-4' inputSize='col-md-8'}}
         {{textarea-f label="Description" value=fields.description labelSize='col-md-4' inputSize='col-md-8'}}
 
-        <button {{action 'cancel'}} class='btn btn-default btn-sm'>Cancel</button>
-        <button {{action 'createEnvironment'}} class='btn btn-primary btn-sm'>Create</button>
+        <div style='float:right'>
+          <button {{action 'cancel'}} class='btn btn-default btn-sm'>Cancel</button>
+          <button {{action 'createEnvironment'}} class='btn btn-primary btn-sm'>Create</button>
+        </div>
       </form>
+      <br />
+      <br />
   </div>
 </form>
