@@ -1,1 +1,25 @@
+<div class="form-group tabbed_side_nav_form row">
+
+  <ul class="nav nav-pills nav-stacked col-md-3" data-tabs="pills">
+      {{#link-to 'satellite.index' tagName='li'}}
+        <a>Deployment Name</a>
+      {{/link-to}}
+
+      {{#link-to 'configure' tagName='li'}}
+        <a>Configure Satellite</a>
+      {{/link-to}}
+
+      {{#link-to 'satellite.subscriptions' tagName='li'}}
+        <a>Select Subscriptions</a>
+      {{/link-to}}
+
+      {{#link-to 'satellite.products' tagName='li' disabled=disableContentTab}}
+        <a>Content Sync</a>
+      {{/link-to}}
+  </ul>
+
+  <div class="tab-content col-md-9">
         {{outlet}}
+  </div>
+
+</div>
