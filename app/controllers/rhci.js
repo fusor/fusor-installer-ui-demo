@@ -21,7 +21,7 @@ export default Ember.ObjectController.extend({
         if (this.get('isCloudFormsOnRhev')) {
           this.set('isCloudFormsOnOpenstack', false);
         }
-    }.observes('isCloudFormsOnRhev'),
+    }.observes('isCloudFormsOnRhev')
 
 
 });
