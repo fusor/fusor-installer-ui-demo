@@ -25,7 +25,17 @@ Router.map(function() {
       this.route('subscriptions');
       this.route('products');
     });
-    this.route('rhev');
+    this.resource('rhev', function() {
+      this.resource('hypervisor', function() {
+        this.route('discovered-host');
+        this.route('existing-host');
+        this.route('new-host');
+      });
+      this.resource('rhev-engine');
+      this.resource('networking');
+      this.resource('storage');
+      this.resource('rhev-options');
+    });
     this.route('openstack');
     this.route('cloudforms');
     this.route('review');

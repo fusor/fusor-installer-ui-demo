@@ -10,14 +10,14 @@ export default Ember.ObjectController.extend({
 
   actions: {
     cancel: function() {
-      this.transitionToRoute('configure');
+      this.transitionTo('configure');
     },
     createEnvironment: function() {
       var self = this;
       var environment = this.store.createRecord('environment', this.get('fields'));
       environment.save().then(function() {
         self.controllerFor('configure').set('selectedEnvironment', environment);
-        self.transitionToRoute('configure');
+        self.transitionTo('configure');
       }, function() {
         alert('error');
       });
