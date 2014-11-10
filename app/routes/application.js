@@ -27,7 +27,19 @@ export default Ember.Route.extend({
     },
     willImplement: function() {
       alert('Check back soon. This will be implemented soon.');
+    },
+    showModal: function(controller_name) {
+      this.render(controller_name, {
+        into: 'application',
+        outlet: 'modal'
+      });
+    },
+    removeModal: function() {
+      this.disconnectOutlet({
+        outlet: 'modal',
+        parentView: 'application'
+      });
     }
-  }
 
+  }
 });
