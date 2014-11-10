@@ -1,3 +1,23 @@
-adsfasdfdas
-{{outlet}}
-ddsdsd
+NOTE: This will assign the <strong>Self Hosted Engine</strong> hostgroup to the selected hosts.
+<br />
+<br />
+<table class="table table-bordered table-striped small">
+  <thead>
+    <tr>
+      <th> {{input type="checkbox"}}</th>
+      <th> Name </th>
+      <th> MAC </th>
+    </tr>
+    </thead>
+
+  <tbody>
+  {{#each controller.model itemController="host"}}
+    <tr>
+      <td> {{input type="checkbox" checked=isChecked}}</td>
+      <td> {{name}} </td>
+      <td> {{mac}} </td>
+    </tr>
+  {{/each}}
+  </tbody>
+</table>
+
