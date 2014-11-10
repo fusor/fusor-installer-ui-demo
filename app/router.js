@@ -17,6 +17,7 @@ Router.map(function() {
   this.route('deployments');
 
   this.resource('deployment', function() {
+
     this.resource('satellite', function() {
       this.resource('configure', function() {
         this.route('new-organization');
@@ -25,6 +26,7 @@ Router.map(function() {
       this.route('subscriptions');
       this.route('products');
     });
+
     this.resource('rhev', function() {
       this.resource('hypervisor', function() {
         this.route('discovered-host');
@@ -36,6 +38,7 @@ Router.map(function() {
       this.resource('storage');
       this.resource('rhev-options');
     });
+
     this.route('openstack');
     this.route('cloudforms');
     this.route('review');

@@ -1,6 +1,6 @@
-<div class="form-group tabbed_side_nav_form row">
+<div class="row tabbed_side_nav_form">
 
-  <ul class="nav nav-pills nav-stacked col-md-3" data-tabs="pills">
+  <ul class="nav nav-pills nav-stacked col-md-3">
       {{#link-to 'hypervisor' tagName='li'}}
         <a>Hypervisor</a>
       {{/link-to}}
@@ -22,7 +22,9 @@
       {{/link-to}}
   </ul>
 
+  <div class="tab-content col-md-9">
       {{outlet}}
+  </div>
 
 </div>
 
