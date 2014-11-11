@@ -2,6 +2,9 @@ import Ember from 'ember';
 
 export default Ember.Controller.extend({
   applicationModes: ['Both', 'Virt', 'Gluster'],
+  engineLocation: ['Local', 'Remote'],
+  dbSetup: ['Automatic', 'Manual'],
+  yesNo: ['Yes', 'No'],
   applicationModes2: [
        {
           id: 1,
