@@ -33,7 +33,12 @@ Router.map(function() {
         this.route('existing-host');
         this.route('new-host');
       });
-      this.resource('engine');
+      this.resource('engine', function() {
+        this.route('hypervisor');
+        this.route('discovered-host');
+        this.route('existing-host');
+        this.route('new-host');
+      });
       this.resource('networking');
       this.resource('storage');
       this.resource('rhev-options');
