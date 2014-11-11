@@ -4,7 +4,7 @@
 <ul class="wizard">
   {{#link-to 'satellite' tagName='li'}}{{step-number value=1}}Satellite{{/link-to}}
   {{#if isRhev}}
-    {{#link-to 'rhev' tagName='li'}}{{step-number value=stepNumberRhev}}RHEV{{/link-to}}
+    {{#link-to 'hypervisor' tagName='li'}}{{step-number value=stepNumberRhev}}RHEV{{/link-to}}
   {{/if}}
   {{#if isOpenStack}}
     {{#link-to 'deployment.openstack' tagName='li'}}{{step-number value=stepNumberOpenstack}}OpenStack{{/link-to}}
