@@ -49,6 +49,15 @@ Router.map(function() {
     this.route('review');
   });
 
+
+  this.resource('hostgroups', function() {
+    this.resource('hostgroup', { path: '/:hostgroup_id' }, function() {
+      this.route('edit');
+    });
+  });
+
+
+  this.route('hostgroup/edit');
 });
 
 export default Router;
