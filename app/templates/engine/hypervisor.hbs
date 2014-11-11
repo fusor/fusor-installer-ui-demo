@@ -1,1 +1,25 @@
-/home/jmagen/fusor-demo/app/templates/engine/hypervisor.hbs
+<!-- NOTE: This will assign the <strong>RHEV Host</strong> hostgroup to the selected hosts. -->
+<br />
+<table class="table table-bordered table-striped small">
+  <thead>
+    <tr>
+      <th> {{input type="checkbox"}}</th>
+      <th> Name </th>
+      <th> Host group </th>
+      <th> Environment </th>
+      <th> OS </th>
+    </tr>
+  </thead>
+
+  <tbody>
+  {{#each controller.model itemController="host"}}
+    <tr>
+      <td> {{input type="checkbox" checked=isChecked}}</td>
+      <td> {{name}} </td>
+      <td> {{hostgroup}} </td>
+      <td> {{environment}} </td>
+      <td> {{operatingsystem}} </td>
+    </tr>
+  {{/each}}
+  </tbody>
+</table>
