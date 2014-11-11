@@ -9,15 +9,17 @@
       {{/base-f}}
 
 
+      {{#if isNFS}}
       {{text-f label="Local ISO domain path" value='/var/lib/exports/iso'}}
 
       {{text-f label="Local ISO domain ACL" value='3980292e1905(rw)' help-inline='note that the default will restrict access to 3980292e1905 only, for security reasons'}}
 
       {{text-f label="Local ISO domain name" value='ISO_DOMAIN'}}
-
+      {{else}}
+        <h3>Gluster TODO</h3>
+      {{/if}}
       <div style='float:right'>
-        <button {{action 'cancel'}} class='btn btn-default btn-sm'>Cancel</button>
-        <button {{action 'createEnvironment'}} class='btn btn-primary btn-sm'>Create</button>
+        <button {{action 'goNext'}} class='btn btn-primary btn-sm'>Next</button>
       </div>
     </form>
     <br />
