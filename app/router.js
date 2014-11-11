@@ -48,10 +48,7 @@ Router.map(function() {
     this.route('cloudforms');
     this.route('review');
   });
-  this.route('engine/hypervisor');
-  this.route('engine/discovered-host');
-  this.route('engine/existing-host');
-  this.route('engine/new-host');
+
 });
 
 export default Router;
