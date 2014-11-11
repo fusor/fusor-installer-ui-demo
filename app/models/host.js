@@ -10,7 +10,10 @@ var Host = DS.Model.extend({
   environment: DS.attr('string'),
   model: DS.attr('string'),
   location: DS.attr('string'),
-  organization: DS.attr('string')
+  organization: DS.attr('string'),
+  cpu: DS.attr('string'),
+  memory: DS.attr('string'),
+  vendor: DS.attr('string')
 });
 
 Host.reopenClass({
@@ -78,6 +81,9 @@ Host.reopenClass({
           environment: 'Development',
           location: 'Tel Aviv',
           organization: 'Default_Organization',
+          cpu: '4 CPU',
+          memory: '8 GB',
+          vendor: 'Dell',
           type: 'Host::Managed'
        },
        {
@@ -91,6 +97,9 @@ Host.reopenClass({
           environment: 'Development',
           location: 'Tel Aviv',
           organization: 'Default_Organization',
+          cpu: '4 CPU',
+          memory: '8 GB',
+          vendor: 'Dell',
           type: 'Host::Managed'
        },
        {
@@ -104,6 +113,9 @@ Host.reopenClass({
           environment: null,
           location: null,
           organization: null,
+          cpu: '4 CPU',
+          memory: '8 GB',
+          vendor: 'Dell',
           type: 'Host::Discovered'
        },
        {
@@ -117,6 +129,9 @@ Host.reopenClass({
           environment: null,
           location: null,
           organization: null,
+          cpu: '4 CPU',
+          memory: '8 GB',
+          vendor: 'Dell',
           type: 'Host::Discovered'
        }
   ]
