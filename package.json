@@ -31,6 +31,7 @@
     "express": "^4.8.5",
     "ember-cli-bootstrap": "0.0.12",
     "glob": "^4.0.5",
-    "ember-admin": "0.0.8"
+    "ember-admin": "0.0.8",
+    "ember-radio-buttons": "^2.1.0"
   }
 }

@@ -2,6 +2,10 @@
   </div class='col-md-12'>
 
     <h4 style='padding-left:15px;'>Select Target Machines for Hypervisors:</h4>
+        {{!targetHypervisorKind}}
+        {{!radio-button-f checked=targetHypervisorKind value="discoveredHost" label='Discovered Hosts'}}
+        {{!radio-button-f checked=targetHypervisorKind value="existingHost" label='Existing Hosts'}}
+        {{!radio-button-f checked=targetHypervisorKind value="newHost" label='New Host'}}
 
     <ul class="nav nav-tabs col-md-12" data-tabs="pills">
         {{#link-to 'hypervisor.discovered-host' tagName='li'}}
