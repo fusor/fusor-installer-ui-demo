@@ -3,7 +3,5 @@
 <ul class="dropdown-menu">
   <li>{{#link-to 'deployments'}}All Deployments{{/link-to}}</li>
   <li>{{#link-to 'rhci'}}New RHCI Deployment{{/link-to}}</li>
-  <button {{action 'showModal' 'new-rhci-modal'}}>NEW RHCI</button>
+  <li><a {{action 'showModal' 'newRHCI'}}>NEW RHCI</a></li>
 </ul>
-
-{{yield}}

@@ -29,18 +29,46 @@ export default Ember.Route.extend({
     willImplement: function() {
       alert('Check back soon. This will be implemented soon.');
     },
-    showModal: function(controller_name) {
-      this.render(controller_name, {
-        into: 'application',
-        outlet: 'modal'
-      });
+
+    // OLD MODAL CODE MANUALLY NOT USING BS EMBER
+    // showModal: function(controller_name) {
+    //   this.render(controller_name, {
+    //     into: 'application',
+    //     outlet: 'modal'
+    //   });
+    // },
+    // removeModal: function() {
+    //   this.disconnectOutlet({
+    //     outlet: 'modal',
+    //     parentView: 'application'
+    //   });
+    // },
+
+    //Submit the modal
+    submit: function() {
+      Bootstrap.NM.push('Successfully submitted modal', 'success');
+      return Bootstrap.ModalManager.hide('myModal');
     },
-    removeModal: function() {
-      this.disconnectOutlet({
-        outlet: 'modal',
-        parentView: 'application'
-      });
-    }
+
+    //Cancel the modal, we don't need to hide the model manually because we set {..., dismiss: 'modal'} on the button meta data
+    cancel: function() {
+      return Bootstrap.NM.push('Modal was cancelled', 'info');
+    },
+
+    //Show the modal
+    showModal: function(name) {
+      return Bootstrap.ModalManager.show(name);
+    },
+
+    //Show the modal
+    showRHCIModal: function() {
+      return Bootstrap.ModalManager.show('newRHCI');
+    },
+
+    //ddd
+    ddd: function() {
+      alert('ddd');
+    },
 
   }
 });
