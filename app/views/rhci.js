@@ -1,9 +1,9 @@
 import Ember from 'ember';
 
 export default Ember.View.extend(Ember.ViewTargetActionSupport, {
-  // classNames: ['highlight'],
+
   // classNameBindings: ['color'],
-  // color: 'yellow',
+  // color: null,
   // highlight: function() {
   //   return this.get('color');
   // },
@@ -28,9 +28,10 @@ export default Ember.View.extend(Ember.ViewTargetActionSupport, {
   //       // to the current controller
   // },
   // doRhciModal: function() {
-  //   this.triggerAction({
-  //     action: 'ddd'
-  //   });
+  //   // this.triggerAction({
+  //   //   action: 'ddd'
+  //   // });
+  //   alert('DDD');
   // }.on('didInsertElement'),
 
 });

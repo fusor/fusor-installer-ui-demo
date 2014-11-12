@@ -9,18 +9,18 @@ Organization.reopenClass({
     FIXTURES: [
         {
           id: 1,
-          name: 'default_organization',
-          title: 'default_organization',
+          name: 'Default_Organization',
+          title: 'Default_Organization',
        },
        {
           id: 2,
-          name: 'engineering',
-          title: 'engineering',
+          name: 'Engineering',
+          title: 'Engineering',
        },
        {
           id: 3,
-          name: 'qa',
-          title: 'qa',
+          name: 'QA',
+          title: 'QA',
        }
   ]
 });

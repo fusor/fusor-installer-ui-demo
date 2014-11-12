@@ -12,6 +12,7 @@
 
 <!-- MODALS -->
 
+{{bs-button title="Show Modal" clicked="show"}}
 {{#bs-modal name="myModal" fade=true footerButtonsBinding="myModalButtons" title="My Modal"}}
     <p>Modal content!</p>
 {{/bs-modal}}
@@ -20,6 +21,5 @@
   {{render 'new-rhci-modal'}}
 {{/bs-modal}}
 
-{{#bs-modal name="newOrganizationModal" fade=true footerButtonsBinding="rhciModalButtons" title="Create New Organization"}}
-  {{partial 'new-organization'}}
-{{/bs-modal}}
+
+

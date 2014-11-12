@@ -1,7 +1,30 @@
 <div class="row">
-  <div class='col-md-6'>
+  <div class='col-md-9'>
         <br />
         <form class="form form-horizontal">
+
+<a {{action 'showModal' 'newOrganizationModal'}}>Create New Organization</a>
+
+<br />
+defaultOrganization is {{defaultOrganization}}
+<br />
+selectedOrganzation is {{selectedOrganzation}}
+
+<table class="table table-bordered small">
+  <thead>
+    <tr>
+      <th></th>
+      <th> Organization </th>
+      <th> Description </th>
+    </tr>
+  </thead>
+
+  <tbody>
+  {{#each org in organizations itemController="organization"}}
+    {{tr-organization org=org selectedOrganzation=selectedOrganzation}}
+  {{/each}}
+  </tbody>
+</table>
 
          {{#select-f label='Organization'
                     content=organizations
@@ -12,11 +35,12 @@
                     prompt="Select Existing Organization"
                     labelSize='col-md-4' inputSize='col-md-8'
                     }}
-                    or {{!link-to 'configure.new-organization'}}
-                    <a {{action 'showModal' 'newOrganizationModal'}}>Create New Organization</a>
          {{/select-f}}
 
 
+{{#bs-modal name="newOrganizationModal" fade=true footerButtonsBinding="rhciModalButtons" title="Create New Organization"}}
+  {{partial 'new-organization'}}
+{{/bs-modal}}
 
         <br />
 
@@ -45,7 +69,5 @@
         </form>
   </div>
 
-  <div class='col-md-6'>
-          {{outlet}}
-  </div>
+
 </div>

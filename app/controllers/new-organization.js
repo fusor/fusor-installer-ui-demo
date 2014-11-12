@@ -8,6 +8,11 @@ export default Ember.ObjectController.extend({
       Ember.Object.create({title: 'Create', clicked:"createOrganization"})
   ],
 
+  myModalButtons: [
+      Ember.Object.create({title: 'Submit', type: 'primary', clicked:"submit"}),
+      Ember.Object.create({title: 'Cancel', clicked:"cancel", dismiss: 'modal'})
+  ],
+
   actions: {
 
     cancel: function() {
