@@ -3,9 +3,15 @@ import Ember from 'ember';
 export default Ember.Component.extend({
   tagName: 'tr',
 
+  isChecked: function () {
+    return (this.get('selectedOrganzation') === this.get('org.name'));
+  }.property('selectedOrganzation', 'org.name'),
+
   showCheckMark: function () {
-    return '✔';
-  }.property(),
+    if (this.get('isChecked')) {
+      return '✔';
+    }
+  }.property('isChecked'),
 
   classNameBindings: ['color'],
   color: null,
@@ -29,5 +35,9 @@ export default Ember.Component.extend({
   },
   click: function(event) {
     this.set('color', 'red');
+    var org = this.get('org');
+    var org_name = org.get('name');
+
+    this.set('selectedOrganzation', org_name);
   },
 });
