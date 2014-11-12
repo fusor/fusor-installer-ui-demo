@@ -1,17 +1,31 @@
 .highlight {
-  background-color: yellow;
+  background-color: yellow !important;
 }
 
 .yellow {
-  background-color: yellow;
+  background-color: yellow !important;
 }
 
 .green {
-  background-color: green;
+  background-color: green !important;
 }
 
 .red {
-  background-color: red;
+  background-color: red !important;
+}
+.blue {
+  background-color: #428bca !important;
+}
+
+.checkmark {
+  font-size:150%;
+  text-align:center;
+}
+
+.fontwhite {
+  color:#fff !important;
+  font-weight:bold;
+  font-size:120%;
 }
 
 a {

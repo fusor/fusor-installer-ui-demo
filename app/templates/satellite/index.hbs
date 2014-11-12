@@ -6,16 +6,6 @@
   {{textarea-f value=description label="Description"}}
 
   <div style='float:right'>
-    <a {{action 'showModal' 'myModal'}}>showModal</a>
-    <a {{action 'showModal' 'newRHCI'}}>new-rhci-modal</a>
-    {{!#bs-button type="success" clicked="showModal" clickedParam="myModal"}}
-<!--       Show Modal with Param -->
-    {{!/bs-button}}
-
-    {{!#bs-modal name="myModal" fade=true footerButtonsBinding="myModalButtons" title="My Modal"}}
-<!--         <p>Modal content!</p -->
-     {{!/bs-modal}}
-
       <button {{action 'showModal' 'cancel-modal'}} class='btn btn-default'>Cancel</button>
       {{#link-to 'configure' class='btn btn-primary'}}Next{{/link-to}}
   </div>

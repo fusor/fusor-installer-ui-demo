@@ -6,6 +6,7 @@ export default Ember.Controller.extend({
   fields: Ember.computed.alias("controllers.new-organization.fields"),
 
   selectedEnvironment: null,
+  selectedOrganzation: "Default_Organization",
 
   rhciModalButtons: [
       Ember.Object.create({title: 'Cancel', clicked:"cancel", dismiss: 'modal'}),
@@ -24,7 +25,7 @@ export default Ember.Controller.extend({
     createOrganization: function() {
       //if (this.get('fields.isDirty')) {
         var organization = this.store.createRecord('organization', this.get('fields'));
-        this.set('selectedOrganization', organization.get('name'));
+        this.set('selectedOrganzation', organization.get('name'));
         this.set('fields',{});
       //}
       return Bootstrap.ModalManager.hide('newOrganizationModal');

@@ -1,4 +1,4 @@
 
-  <td> {{showCheckMark}}</td>
+  <td class="checkmark"> {{#unless isChecked}}{{input type="radio"}}{{/unless}}{{showCheckMark}}</td>
   <td> {{org.name}} </td>
   <td> {{org.description}}</td>

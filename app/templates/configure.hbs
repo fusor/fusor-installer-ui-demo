@@ -3,10 +3,12 @@
         <br />
         <form class="form form-horizontal">
 
-<a {{action 'showModal' 'newOrganizationModal'}}>Create New Organization</a>
-
+<h4>&nbsp;&nbsp;&nbsp;&nbsp;Select Organization or
+ {{!bs-button type='success' title="Create New Organization" clicked="showModal" clickedParamBinding="newOrganizationModal"}}
+ <button class='btn btn-success' {{action 'showModal' 'newOrganizationModal'}}>Create New Organization</button>
+</h4>
 <br />
-selectedOrganzation is {{selectedOrganzation}}
+<br />
 
 <table class="table table-bordered small">
   <thead>
@@ -24,7 +26,7 @@ selectedOrganzation is {{selectedOrganzation}}
   </tbody>
 </table>
 
-         {{#select-f label='Organization'
+         {{!#select-f label='Organization'
                     content=organizations
                     optionLabelPath="content.name"
                     optionValuePath="content.id"
@@ -33,7 +35,7 @@ selectedOrganzation is {{selectedOrganzation}}
                     prompt="Select Existing Organization"
                     labelSize='col-md-4' inputSize='col-md-8'
                     }}
-         {{/select-f}}
+         {{!/select-f}}
 
 
 {{#bs-modal name="newOrganizationModal" fade=true footerButtonsBinding="rhciModalButtons" title="Create New Organization"}}
@@ -41,6 +43,14 @@ selectedOrganzation is {{selectedOrganzation}}
 {{/bs-modal}}
 
         <br />
+        <br />
+        <br />
+        <br />
+      TODO - change Environment
+        <br />
+<h4>&nbsp;&nbsp;&nbsp;&nbsp;Select Environment or
+ <button class='btn btn-success disabled' {{action 'showModal' 'newEnvironmentModal'}}>Create New Environment</button>
+</h4>
 
          {{#select-f label='Environment'
                     content=environments
@@ -52,7 +62,6 @@ selectedOrganzation is {{selectedOrganzation}}
                     labelSize='col-md-4' inputSize='col-md-8'
                     }}
 
-                    or {{#link-to 'configure.new-environment' class=''}}Create New Environment{{/link-to}}
          {{/select-f}}
 
 
@@ -60,7 +69,7 @@ selectedOrganzation is {{selectedOrganzation}}
         <br />
 
           <div style='float:right'>
-              <button {{action 'showModal' 'cancel-modal'}} class='btn btn-default'>Cancel</button>
+              {{#link-to 'satellite' class='btn btn-default'}}Back{{/link-to}}
               {{#link-to 'satellite.subscriptions' class='btn btn-primary'}}Next{{/link-to}}
           </div>
 
