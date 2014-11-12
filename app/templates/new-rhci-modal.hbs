@@ -1,0 +1,40 @@
+{{#modal-confirm title='New Deployment: Select Red Hat Cloud Infrastructure Products' okButtonLabel='Select' ok='save' close='removeModal' }}
+
+<br /><h1></h1>
+
+<br />
+Choose the products to deploy. The installer guides you through creating a new Red Hat Cloud Infrastructure
+deployment.
+
+<br />
+<br />
+
+{{input type="checkbox" name="isRhev" checked=isRhev}} RHEV
+<br/>
+Complete virtualization management bacon ipsum dolor sit amet kevin incididunt enim minim. Id
+officia aliqua, mollit short ribs cillum consectetur spare ribs magna commodo.
+
+
+<br/>
+<br/>
+
+
+{{input type="checkbox" name="isOpenStack" checked=isOpenStack}} RHELOSP
+<br/>
+Red Hat Enterprise Linux OpenStack Platform gives you a flexible, secure foundation to build a
+massively scalable private or public cloud ... lorem ipsum
+
+
+<br/>
+<br/>
+{{input type="checkbox" name="isCloudForms" checked=isCloudForms}} CloudForms
+<br/>
+Manage your virtual, private, and hybrid cloud infrastructures.
+
+<div class="form-group">
+  <div class="col-xs-offset-8 col-xs-4 submit">
+  {{#link-to 'deployments' class="btn btn-default"}}Cancel{{/link-to}}
+  {{#link-to 'deployment' class="btn btn-primary"}}Select{{/link-to}}
+  </div>
+</div>
+{{/modal-confirm}}

@@ -6,7 +6,8 @@
   {{textarea-f value=description label="Description"}}
 
   <div style='float:right'>
-      <button {{action 'showModal' 'cancel-modal'}} class='btn btn-default'>Cancel</button>
+
+      <a {{action 'showModal' 'new-rhci-modal'}}>BS RHCI</a>
       <button {{action 'showModal' 'cancel-modal'}} class='btn btn-default'>Cancel</button>
       {{#link-to 'configure' class='btn btn-primary'}}Next{{/link-to}}
   </div>

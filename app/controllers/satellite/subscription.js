@@ -5,6 +5,6 @@ export default Ember.ObjectController.extend({
 
   registerOnParent: function() {
     this.send('registerToggle', this);
-  }.on('init')
+  }.on('init'),
 
 });

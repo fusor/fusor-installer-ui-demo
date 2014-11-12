@@ -8,6 +8,12 @@ export default Ember.Controller.extend({
   isPasswordSet: false,
   dontHideMainMenu: true,
 
+
+  myModalButtons: [
+      Ember.Object.create({title: 'Submit', clicked:"submit"}),
+      Ember.Object.create({title: 'Cancel', clicked:"cancel", dismiss: 'modal'})
+  ],
+
   actions: {
     signIn: function() {
       this.controllerFor('application').set('isLoggedIn', true);
@@ -21,6 +27,26 @@ export default Ember.Controller.extend({
     signOut: function() {
       this.controllerFor('application').set('isLoggedIn', false);
       this.transitionTo('login');
+    },
+
+    //Submit the modal
+    submit: function() {
+      Bootstrap.NM.push('Successfully submitted modal', 'success');
+      return Bootstrap.ModalManager.hide('myModal');
+    },
+
+    //Cancel the modal, we don't need to hide the model manually because we set {..., dismiss: 'modal'} on the button meta data
+    cancel: function() {
+      return Bootstrap.NM.push('Modal was cancelled', 'info');
+    },
+
+    //Show the modal
+    showModal: function(name) {
+      return Bootstrap.ModalManager.show(name);
+    },
+
+    buttonWithParam: function(expectedMyself) {
+        alert("Passed controller as a param: " + expectedMyself);
     }
 
   }

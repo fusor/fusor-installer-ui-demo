@@ -12,8 +12,11 @@
                     prompt="Select Existing Organization"
                     labelSize='col-md-4' inputSize='col-md-8'
                     }}
-                    or {{#link-to 'configure.new-organization' class=''}}Create New Organization{{/link-to}}
+                    or {{!link-to 'configure.new-organization'}}
+                    <a {{action 'showModal' 'new-rhci-modal'}}>Create New Organization</a>
          {{/select-f}}
+
+
 
         <br />
 

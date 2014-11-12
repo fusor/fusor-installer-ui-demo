@@ -6,7 +6,30 @@
   {{render "mainmenu"}}
 {{/if}}
 
+    {{bs-button title="Show Modal" clicked="show"}}
+
+    {{#bs-modal name="myModal" fade=true footerButtonsBinding="myModalButtons" title="My Modal"}}
+        <p>Modal content!</p>
+    {{/bs-modal}}
+
+
+      <a {{action 'showModal' 'new-rhci-modal'}}>NEW RHCI</a>
+
+          {{bs-button type="link" title="showRHCI" clicked="showModal"}}
+
+
+    {{#bs-modal name="myModal" fade=true footerButtonsBinding="myModalButtons" title="My Modal"}}
+        <p>Modal content!</p>
+    {{/bs-modal}}
+
+    {{#bs-button type="primary" clicked="buttonWithParam" clickedParam="333"}}Button with Param{{/bs-button}}
+
+    {{#bs-button type="success" clicked="showModal" clickedParam="myModal"}}Show Modal with Param{{/bs-button}}
+
+      <a {{action 'showModal' 'myModal'}}>NEW RHCI</a>
+
+
 <div {{bind-attr class="isLoggedIn:container"}}>
   {{outlet}}
-  {{outlet modal}}
+  {{!outlet modal}}
 </div>

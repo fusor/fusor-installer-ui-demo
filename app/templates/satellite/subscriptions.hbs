@@ -1,3 +1,8 @@
+    {{bs-button title="Show Modal" clicked="show"}}
+    {{#bs-modal name="myModal" fade=true footerButtonsBinding="myModalButtons" title="My Modal"}}
+        <p>Modal content!</p>
+    {{/bs-modal}}
+
 <br />
 {{#if attachingInProgress}}
   Attaching subscriptions ({{prog}}% complete)
