@@ -23,17 +23,36 @@
   </tbody>
 </table>
 
-{{#bs-modal name="newOrganizationModal" fade=true footerButtonsBinding="rhciModalButtons" title="Create New Organization"}}
-  {{partial 'new-organization'}}
-{{/bs-modal}}
-
         <br />
         <br />
-<h4>&nbsp;&nbsp;&nbsp;&nbsp;Select Environment or
- <button class='btn btn-success disabled' {{action 'showModal' 'newEnvironmentModal'}}>Create New Environment</button>
+<h4>&nbsp;&nbsp;&nbsp;&nbsp;Select Lifecycle Environment or
+ <button class='btn btn-success' {{action 'showModal' 'newEnvironmentModal'}}>Create New Environment</button>
 </h4>
 
-         {{#select-f label='Environment'
+      <table class="table">
+        <tbody>
+          <tr>
+            <td class="path-selector">
+              <ul class="path-list">
+               {{#each env in environments itemController="environment"}}
+                <li class="path-list-item">
+                  <label class='env_path_active'>
+                      {{env.name}}
+                  </label>
+                </li>
+                {{/each}}
+                <li class="path-list-item">
+                  <label class="path-list-item-label">
+                    <i class="icon-plus">+</i>
+                  </label>
+                </li>
+              </ul>
+          </td>
+        </tr>
+       </tbody>
+     </table>
+
+         {{!#select-f label='Environment'
                     content=environments
                     optionLabelPath="content.name"
                     optionValuePath="content.id"
@@ -43,49 +62,11 @@
                     labelSize='col-md-4' inputSize='col-md-8'
                     }}
 
-         {{/select-f}}
+         {{!/select-f}}
 
 
-        <br />
-        <br />
-
-
-      <table class="table">
-        <thead>
-          <tr>
-            <th>Environment Path</th>
-          </tr>
-        </thead>
-
-        <tbody>
-          <tr>
-            <td class="path-selector">
-              <ul class="path-list">
-                <li class="path-list-item">
-                  <label>
-                    <div>
-                      Library
-                    </div>
-                  </label>
-                </li>
-                <li class="path-list-item">
-                  <label>
-                    <div>
-                      Test
-                    </div>
-                  </label>
-                </li>
-                <li class="path-list-item">
-                  <label class="path-list-item-label">
-                    <i class="icon-plus"></i>
-                  </label>
-                </li>
-              </ul>
-          </td>
-        </tr>
-       </tbody>
-     </table>
-
+         <br />
+         <br />
           <div style='float:right'>
               {{#link-to 'satellite' class='btn btn-default'}}Back{{/link-to}}
               {{#link-to 'satellite.subscriptions' class='btn btn-primary'}}Next{{/link-to}}
@@ -96,3 +77,12 @@
 
 
 </div>
+
+
+{{#bs-modal name="newOrganizationModal" fade=true footerButtonsBinding="rhciModalButtons" title="Create New Organization"}}
+  {{partial 'new-organization'}}
+{{/bs-modal}}
+
+{{#bs-modal name="newEnvironmentModal" fade=true footerButtonsBinding="rhciModalButtons" title="Create New Environment"}}
+  {{render 'configure/new-environment'}}
+{{/bs-modal}}
