@@ -10680,10 +10680,15 @@ label[for='toggle-all'] {
 
 /* katello */
 
-.path-selector {
+ul.path-list {
+  padding: 0px;
+  margin: 0px;
+}
+
+td.path-selector {
   margin-top: 20px;
 }
-.path-selector .path-list {
+td.path-selector .path-list {
   list-style: none;
   overflow: hidden;
   position: relative;
@@ -10691,12 +10696,12 @@ label[for='toggle-all'] {
   display: inline-block;
   border: 1px solid #d7d7d7;
 }
-.path-selector .path-list .path-list-item {
+td.path-selector .path-list .path-list-item {
   float: left;
   margin-left: 0;
   white-space: nowrap;
 }
-.path-selector .path-list .path-list-item:first-child label {
+td.path-selector .path-list .path-list-item:first-child label {
   padding-left: 12px;
 }
 .path-selector .path-list .path-list-item:last-child label {
@@ -10713,9 +10718,10 @@ label[for='toggle-all'] {
 .path-selector .path-list .path-list-item:last-child label:after:hover {
   border-left-color: #00a8d6;
 }
+
 .path-selector .path-list .path-list-item label {
   color: black;
-  font-size: 12px;
+  font-size: 30px;
   font-weight: normal;
   font-family: "Open Sans", Helvetica, Arial, sans-serif;
   line-height: 20px;
@@ -10733,14 +10739,14 @@ label[for='toggle-all'] {
   border-left-color: #005870;
 }
 .path-selector .path-list .path-list-item label.active:hover:after {
-  border-left-color: #00a8d6;
+  border-left-color: yellow !important;
 }
 .path-selector .path-list .path-list-item label:hover:not([disabled]) {
-  background: #00a8d6;
+  background: green !important;
   color: white;
 }
 .path-selector .path-list .path-list-item label:hover:not([disabled]):after {
-  border-left-color: #00a8d6;
+  border-left-color: green !important;
 }
 .path-selector .path-list .path-list-item label:after {
   content: " ";
@@ -10749,7 +10755,7 @@ label[for='toggle-all'] {
   height: 0;
   border-top: 30px solid transparent;
   border-bottom: 30px solid transparent;
-  border-left: 15px solid #ffffff;
+  border-left: 15px solid red;
   position: absolute;
   top: 50%;
   margin-top: -30px;
@@ -10763,7 +10769,7 @@ label[for='toggle-all'] {
   height: 0;
   border-top: 30px solid transparent;
   border-bottom: 30px solid transparent;
-  border-left: 15px solid #d7d7d7;
+  border-left: 15px solid green;
   position: absolute;
   top: 50%;
   margin-top: -30px;
@@ -10869,7 +10875,7 @@ label[for='toggle-all'] {
   height: 0;
   border-top: 30px solid transparent;
   border-bottom: 30px solid transparent;
-  border-left: 15px solid #d7d7d7;
+  border-left: 15px solid black;
   position: absolute;
   top: 50%;
   margin-top: -30px;
@@ -10891,4 +10897,12 @@ label[for='toggle-all'] {
 }
 .path-selector .path-list .path-list-item.disabled-item input[type="checkbox"] {
   display: none;
+}
+
+label.env_path_active {
+  color: white !important;
+  background: red !important;
+}
+label.env_path_active:after {
+  border-left: 15px solid red !important;
 }
