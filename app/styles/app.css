@@ -38,7 +38,7 @@ td {
 .fontwhite {
   color:#fff !important;
   font-weight:bold;
-  font-size:120%;
+  /*font-size:120%;*/
 }
 
 a {

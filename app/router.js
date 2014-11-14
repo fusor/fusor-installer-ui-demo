@@ -19,10 +19,9 @@ Router.map(function() {
   this.resource('deployment', function() {
 
     this.resource('satellite', function() {
-      this.resource('configure', function() {
-        this.route('new-organization');
-        this.route('new-environment');
-      });
+      this.resource('configure');
+      this.resource('configure-organization');
+      this.resource('configure-environment');
       this.route('subscriptions');
       this.route('products');
     });

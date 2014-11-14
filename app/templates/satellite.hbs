@@ -5,17 +5,19 @@
         <a>Deployment Name</a>
       {{/link-to}}
 
-      {{#link-to 'configure' tagName='li'}}
-        <a>Configure Satellite</a>
+      {{#link-to 'configure-organization' tagName='li'}}
+        <a>Configure Organization</a>
       {{/link-to}}
 
-      {{#link-to 'satellite.subscriptions' tagName='li'}}
-        <a>Select Subscriptions</a>
+      {{#link-to 'configure-environment' tagName='li'}}
+        <a>Configure Lifecycle Environment</a>
       {{/link-to}}
 
-      {{#link-to 'satellite.products' tagName='li' disabled=disableContentTab}}
-        <a>Content Sync</a>
-      {{/link-to}}
+      {{!#link-to 'configure' tagName='li'}}
+
+      {{!#link-to 'satellite.subscriptions' tagName='li'}}
+
+      {{!#link-to 'satellite.products' tagName='li' disabled=disableContentTab}}
   </ul>
 
   <div class="tab-content col-md-9">
