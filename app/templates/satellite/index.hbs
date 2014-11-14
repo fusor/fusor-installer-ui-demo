@@ -6,8 +6,12 @@
   {{textarea-f value=description label="Description"}}
 
   <div style='float:right'>
-      <button {{action 'showModal' 'cancel-modal'}} class='btn btn-default'>Cancel</button>
+      <button {{action 'showModal' 'cancelDeploymentModal'}} class='btn btn-default'>Cancel</button>
       {{#link-to 'configure' class='btn btn-primary'}}Next{{/link-to}}
   </div>
 
 </form>
+
+{{#bs-modal name="cancelDeploymentModal" fade=true footerButtonsBinding="rhciModalButtons" title="Cancel Deployment"}}
+  Are you sure you want to cancel?
+{{/bs-modal}}

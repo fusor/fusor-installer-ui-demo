@@ -1,12 +1,13 @@
 import Ember from 'ember';
 
 export default Ember.ObjectController.extend({
-  needs: ['rhci', 'satellite/subscriptions'],
+  needs: ['rhci', 'satellite/subscriptions', 'satellite/index'],
 
   isSatellite: Ember.computed.alias("controllers.rhci.isSatellite"),
   isRhev: Ember.computed.alias("controllers.rhci.isRhev"),
   isOpenStack: Ember.computed.alias("controllers.rhci.isOpenStack"),
   isCloudForms: Ember.computed.alias("controllers.rhci.isCloudForms"),
+  name: Ember.computed.alias("controllers.satellite/index.name"),
 
   disableReview: Ember.computed.alias("controllers.satellite/subscriptions.disableNext"),
   stepNumberRhev: 2,

@@ -12,16 +12,16 @@ Organization.reopenClass({
           name: 'Default_Organization',
           title: 'Default_Organization',
        },
-       {
-          id: 2,
-          name: 'Engineering',
-          title: 'Engineering',
-       },
-       {
-          id: 3,
-          name: 'QA',
-          title: 'QA',
-       }
+       // {
+       //    id: 2,
+       //    name: 'Engineering',
+       //    title: 'Engineering',
+       // },
+       // {
+       //    id: 3,
+       //    name: 'QA',
+       //    title: 'QA',
+       // }
   ]
 });
 
