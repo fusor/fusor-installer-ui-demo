@@ -45,8 +45,9 @@ deploymentName is {{deploymentName}}
           </li>
         </ul>
     </div>
-selectedEnvironment is {{selectedEnvironment}}
+
     {{#if hasNewEnvs}}
+      {{#each env in newenvs itemController="environment"}}
       <div class="path-selector">
         <ul class="path-list">
           <li class="path-list-item">
@@ -54,16 +55,15 @@ selectedEnvironment is {{selectedEnvironment}}
               Library
             </label>
           </li>
-          {{#each env in newenvs itemController="environment"}}
-              {{env-path-list-item env=env selectedEnvironment=selectedEnvironment}}
-          {{/each}}
+          {{env-path-list-item env=env selectedEnvironment=selectedEnvironment}}
           <li class="path-list-item">
             <label class="path-list-item-label" style='color:gray;'>
               &nbsp;
             </label>
           </li>
         </ul>
-    </div>
+      </div>
+      {{/each}}
     {{/if}}
 
 
@@ -87,5 +87,5 @@ selectedEnvironment is {{selectedEnvironment}}
 
 <!-- if use RENDER here, I get binding in new-environment controller -->
 {{#bs-modal name="newEnvironmentModal" fade=true footerButtonsBinding="rhciNewEnvButtons" title="Create New Environment"}}
-  {{partial 'configure/new-environment'}}
+  {{partial 'new-environment'}}
 {{/bs-modal}}

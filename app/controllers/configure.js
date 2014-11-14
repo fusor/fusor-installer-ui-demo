@@ -1,15 +1,15 @@
 import Ember from 'ember';
 
 export default Ember.Controller.extend({
-  needs: ['new-organization', 'organization', 'organizations', 'new-environment', 'satellite/index'],
+  needs: ['organization', 'organizations'],
 
-  fields: Ember.computed.alias("controllers.new-organization.fields"),
-  fields2: Ember.computed.alias("controllers.new-environment.fields2"),
+  fields: {}, //Ember.computed.alias("controllers.new-organization.fields"),
+  fields2: {}, //Ember.computed.alias("controllers.new-environment.fields2"),
 
-  deploymentName: Ember.computed.alias("controllers.satellite/index.name"),
-  defaultOrgName: function () {
-    return this.getWithDefault('defaultOrg', this.get('deploymentName'));
-  }.property(),
+  // deploymentName: Ember.computed.alias("controllers.satellite/index.name"),
+  // defaultOrgName: function () {
+  //   return this.getWithDefault('defaultOrg', this.get('deploymentName'));
+  // }.property(),
 
   selectedEnvironment: "Development",
   selectedOrganzation: "Default_Organization",
