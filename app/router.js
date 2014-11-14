@@ -45,7 +45,9 @@ Router.map(function() {
     });
 
     this.route('openstack');
-    this.route('cloudforms');
+    this.resource('cloudforms', function() {
+      this.resource('where-install');
+    });
     this.route('review');
   });
 
