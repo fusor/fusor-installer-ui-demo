@@ -2,16 +2,15 @@
   <div class='col-md-9'>
         <form class="form form-horizontal">
 
-<h4>&nbsp;&nbsp;&nbsp;&nbsp;Select Organization or
- {{!bs-button type='success' title="Create New Organization" clicked="showModal" clickedParamBinding="newOrganizationModal"}}
- <button class='btn btn-success' {{action 'showModal' 'newOrganizationModal'}}>Create New Organization</button>
+<h4 style='text-align:right;'>
+ <button class='btn btn-success' {{action 'showModal' 'newOrganizationModal'}}>Add Organization</button>
 </h4>
-
+deploymentName is {{deploymentName}}
 <table class="table table-bordered small">
   <thead>
     <tr>
       <th class="col-md-1"></th>
-      <th class="col-md-4"> Organization </th>
+      <th class="col-md-4"> Organization Name</th>
       <th class="col-md-4"> Description </th>
     </tr>
   </thead>
@@ -25,40 +24,47 @@
 
         <br />
         <br />
-<h4>&nbsp;&nbsp;&nbsp;&nbsp;Select Lifecycle Environment or
- <button class='btn btn-success' {{action 'showModal' 'newEnvironmentModal'}}>Create New Environment</button>
-</h4>
+<div class='col-md-offset-1 col-md-5'>
+  &nbsp;&nbsp;&nbsp;&nbsp;<strong>Lifecycle Environment</strong>
+</div>
+ <div style='text-align:right;'>
+ <button class='btn btn-success' {{action 'showModal' 'newEnvironmentModal'}}>Add Environment</button>
+ </div>
 
-      <table class="table">
-        <tbody>
-          <tr>
-            <td class="path-selector">
-              <ul class="path-list">
-                {{#each env in environments itemController="environment"}}
-                  {{env-path-list-item name=env.name}}
-                {{/each}}
-                <li class="path-list-item">
-                  <label class="path-list-item-label">
-                    <i class="icon-plus">+</i>
-                  </label>
-                </li>
-              </ul>
-          </td>
-        </tr>
-       </tbody>
-     </table>
-
-         {{!#select-f label='Environment'
-                    content=environments
-                    optionLabelPath="content.name"
-                    optionValuePath="content.id"
-                    value=selectedEnvironment.id
-                    selection=selectedEnvironment
-                    prompt="Select Existing Environment"
-                    labelSize='col-md-4' inputSize='col-md-8'
-                    }}
-
-         {{!/select-f}}
+    <div class="path-selector">
+        <ul class="path-list">
+          <li class="path-list-item">
+          </li>
+          {{#each env in environments itemController="environment"}}
+            {{env-path-list-item env=env selectedEnvironment=selectedEnvironment}}
+          {{/each}}
+          <li class="path-list-item">
+            <label class="path-list-item-label" style='color:gray;'>
+              &nbsp;
+            </label>
+          </li>
+        </ul>
+    </div>
+selectedEnvironment is {{selectedEnvironment}}
+    {{#if hasNewEnvs}}
+      <div class="path-selector">
+        <ul class="path-list">
+          <li class="path-list-item">
+            <label class="path-list-item-label" style='color:gray;'>
+              Library
+            </label>
+          </li>
+          {{#each env in newenvs itemController="environment"}}
+              {{env-path-list-item env=env selectedEnvironment=selectedEnvironment}}
+          {{/each}}
+          <li class="path-list-item">
+            <label class="path-list-item-label" style='color:gray;'>
+              &nbsp;
+            </label>
+          </li>
+        </ul>
+    </div>
+    {{/if}}
 
 
          <br />

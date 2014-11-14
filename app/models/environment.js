@@ -11,18 +11,17 @@ Environment.reopenClass({
        {
           id: 1,
           name: 'Library',
-       },
-       {
+       },       {
           id: 2,
-          name: 'development',
+          name: 'Development',
        },
        {
           id: 3,
-          name: 'test',
+          name: 'Test',
        },
        {
           id: 4,
-          name: 'production',
+          name: 'Production',
        }
   ]
 });

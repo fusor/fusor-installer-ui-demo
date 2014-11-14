@@ -5,24 +5,25 @@ export default Ember.Component.extend({
   classNames: ['path-list-item', 'list_item_active'],
 
   isChecked: function () {
-    var env_name = this.get('name');
+    var env = this.get('env');
+    var env_name = env.get('name');
     return (this.get('selectedEnvironment') === env_name);
-  }.property('selectedEnvironment', 'name'),
+  }.property('selectedEnvironment', 'env'),
 
-  showCheckMark: function () {
-    if (this.get('isChecked')) {
-      return '✔';
-    }
-  }.property('isChecked'),
-
-  classNameBindings: ['bgColor'],
   bgColor: function () {
     if (this.get('isChecked')) {
-      return 'blue';
+      return 'env_path_active';
     } else {
       return null;
     }
   }.property('isChecked'),
+
+  click: function(event) {
+    //this.set('color', 'blue');
+    var env = this.get('env');
+    var env_name = env.get('name');
+    this.set('selectedEnvironment', env_name);
+  },
 
 
 });

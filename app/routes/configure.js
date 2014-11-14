@@ -5,6 +5,7 @@ export default Ember.Route.extend({
     controller.set('model', model);
     controller.set('organizations', this.store.find('organization'));
     controller.set('environments', this.store.find('environment'));
+    controller.set('newenvs', this.store.find('newenv'));
   },
 
 });
