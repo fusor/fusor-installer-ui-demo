@@ -6,28 +6,18 @@
 {{text-f label="Host address"}}
 {{text-f label="Storage name"}}
 
-          --== OVIRT ENGINE CONFIGURATION ==--
 
-{{text-f label="Engine admin password"}}
-{{text-f label="Confirm admin password"}}
-{{select-simple-f label="Application Mode" content=applicationModes}}
-
-          --== DATABASE CONFIGURATION ==--
-
-{{select-simple-f label="Engine database location" content=engineLocation}}
-
-{{select-simple-f label="Automatically configure postgresql and create Engine database" content=dbSetup}}
+{{!text-f label="Engine admin password"}}
+{{!text-f label="Confirm admin password"}}
+{{!select-simple-f label="Application Mode" content=applicationModes}}
 
 
-          --== PKI CONFIGURATION ==--
+{{!select-simple-f label="Engine database location" content=engineLocation}}
 
-{{text-f label="Organization name for certificate" value="Test"}}
+{{!select-simple-f label="Automatically configure postgresql and create Engine database" content=dbSetup}}
 
 
-          --== APACHE CONFIGURATION ==--
+{{!select-simple-f label="Set the application as the default page of the web server" content=yesNo}}
 
-          Setup can configure the default page of the web server to present the application home page. This may conflict with existing applications.
-{{select-simple-f label="Set the application as the default page of the web server" content=yesNo}}
-
-{{select-simple-f label="Configure apache to use SSL using a certificate issued from the internal CA" content=dbSetup}}
+{{!select-simple-f label="Configure apache to use SSL using a certificate issued from the internal CA" content=dbSetup}}
 

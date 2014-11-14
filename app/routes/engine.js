@@ -2,6 +2,6 @@ import Ember from 'ember';
 
 export default Ember.Route.extend({
   beforeModel: function() {
-    this.transitionTo('engine.hypervisor');
+    this.transitionTo('engine.discovered-host');
   }
 });

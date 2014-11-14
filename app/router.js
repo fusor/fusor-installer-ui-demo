@@ -27,6 +27,7 @@ Router.map(function() {
     });
 
     this.resource('rhev', function() {
+      this.resource('rhev-setup', { path: 'setup' });
       this.resource('hypervisor', function() {
         this.route('discovered-host');
         this.route('existing-host');
@@ -40,7 +41,7 @@ Router.map(function() {
       });
       this.resource('networking');
       this.resource('storage');
-      this.resource('rhev-options');
+      this.resource('rhev-options', { path: 'configuration' });
     });
 
     this.route('openstack');

@@ -1,25 +1,9 @@
 <div class="row">
   </div class='col-md-12'>
 
-    <h4 style='padding-left:15px;'>Select Target Machines for Hypervisors:</h4>
-        {{!targetHypervisorKind}}
-        {{!radio-button-f checked=targetHypervisorKind value="discoveredHost" label='Discovered Hosts'}}
-        {{!radio-button-f checked=targetHypervisorKind value="existingHost" label='Existing Hosts'}}
-        {{!radio-button-f checked=targetHypervisorKind value="newHost" label='New Host'}}
+   <h4 style='padding-left:15px;'>Select Target Machines for {{controllers.rhev.hypervisorTabName}}:</h4>
 
-    <ul class="nav nav-tabs col-md-12" data-tabs="pills">
-        {{#link-to 'hypervisor.discovered-host' tagName='li'}}
-          <a>Discovered Hosts</a>
-        {{/link-to}}
-
-        {{#link-to 'hypervisor.existing-host' tagName='li'}}
-          <a>Existing Hosts</a>
-        {{/link-to}}
-
-        {{#link-to 'hypervisor.new-host' tagName='li'}}
-          <a>New Host</a>
-        {{/link-to}}
-    </ul>
+   <br />
     <div class="col-md-12">
           {{outlet}}
     </div>
@@ -29,3 +13,7 @@
 <div class="row">
 
 </div>
+
+        {{!radio-button-f checked=targetHypervisorKind value="discoveredHost" label='Discovered Hosts'}}
+        {{!radio-button-f checked=targetHypervisorKind value="existingHost" label='Existing Hosts'}}
+        {{!radio-button-f checked=targetHypervisorKind value="newHost" label='New Host'}}
