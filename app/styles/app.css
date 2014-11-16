@@ -1,6 +1,11 @@
 
 
 /* CUSTOM APP *****************************/
+
+.rhci-item-seletcted {
+  border: solid 7px black;
+}
+
 table {
   table-layout: fixed !important;
 }
@@ -10860,3 +10865,4 @@ label.env_path_active {
 label.env_path_active:after {
   border-left: 15px solid #428bca !important;
 }
+
