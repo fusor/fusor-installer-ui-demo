@@ -13,15 +13,10 @@
 <div class='row'>
 
   <div class='col-md-4'>
-    <div cl>
-      <img src='rhci-rhev-640-210.png' class="img-responsive">
-      <div style='padding:10px'>
+    {{#rchi-item srcImage='rhci-rhev-640-210.png' isChecked=isRhev}}
         Complete virtualization management bacon ipsum dolor sit amet kevin incididunt enim minim. Id
         officia aliqua, mollit short ribs cillum consectetur spare ribs magna commodo.
-      </div>
-
-      <button class='btn btn-default btn-block' {{action 'install'}}><i class='glyphicon glyphicon-check'></i>&nbsp; Install RHEV</button>
-    </div>
+    {{/rchi-item}}
   </div>
 
   <div class='col-md-4'>

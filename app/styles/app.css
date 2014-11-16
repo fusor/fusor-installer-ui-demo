@@ -2,8 +2,17 @@
 
 /* CUSTOM APP *****************************/
 
-.rhci-item-seletcted {
+.rhci-item-selected {
   border: solid 7px black;
+}
+
+.rhci-item-deselected {
+  border: solid 1px gray;
+  margin: 6px;
+}
+
+.rhci-item-text {
+  padding:10px;
 }
 
 table {

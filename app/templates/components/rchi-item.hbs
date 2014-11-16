@@ -1,0 +1,11 @@
+<img {{bind-attr src=srcImage}} class="img-responsive">
+<div class='rhci-item-text'>
+  {{yield}}
+</div>
+
+{{#if isChecked}}
+<button class='btn btn-default btn-block'><i class='glyphicon glyphicon-check'></i>&nbsp; Install RHEV</button>
+{{else}}
+<button class='btn btn-default btn-block'><i class='glyphicon glyphicon-unchecked'></i>&nbsp; Install RHEV</button>
+{{/if}}
+{{isChecked}}
