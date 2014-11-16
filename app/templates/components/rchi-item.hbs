@@ -1,8 +1,20 @@
 
 <img {{bind-attr src=srcImage}} class="img-responsive">
 
-<div class='rhci-item-text'>
-  {{yield}}
+  <div {{bind-attr class=":rhci-footer-box isHover:rhci-footer-hover"}}>
+       {{#if showMsgToSelect}}
+         Click to select {{name}} to Install
+       {{else}}
+         {{#if showMsgToDeselect}}
+           Click to deselect {{name}}
+         {{else}}
+          <div class='rhci-item-text'>
+            {{yield}}
+          </div>
+         {{/if}}
+       {{/if}}
+  </div>
+
 </div>
 
 <div {{bind-attr class=":rhci-footer isChecked:rhci-footer-selected:rhci-footer-unselected"}}>
@@ -17,13 +29,3 @@
      </span>
 </div>
 
-<div {{bind-attr class=":rhci-footer-box isHover:rhci-footer-hover"}}>
-     {{#if showMsgToSelect}}
-       Click anywhere in box to select {{name}} to Install
-     {{else}}
-       {{#if showMsgToDeselect}}
-         Click anywhere in box to deselect {{name}}
-       {{/if}}
-     {{/if}}
-</div>
-{{!bs-alert type='info'}}

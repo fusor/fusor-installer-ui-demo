@@ -5,11 +5,13 @@
     Choose the products to deploy. The installer guides you through creating a new Red Hat Cloud Infrastructure
     deployment.
     <br />
+    You may click anywhere in a box to select or de-select.
+    <br />
     <br />
   </div>
 </div>
 
-<div class='row'>
+<div class='row' style='height:370px;'>
 
   <div class='col-md-4'>
     {{#rchi-item srcImage='rhci-rhev-640-210.png' isChecked=isRhev name='RHEV'}}
@@ -36,9 +38,9 @@
 
 <div class='row'>
   <div class='col-md-12'>
-    <div style='float:right;padding-top:40px;'>
+    <div style='float:right;'>
       {{#link-to 'deployments' class="btn btn-default"}}Cancel{{/link-to}}
-      {{#link-to 'deployment' class="btn btn-primary"}}Next{{/link-to}}
+      {{#link-to 'deployment' class="btn btn-primary" disabled=disableNext }}Next{{/link-to}}
     </div>
   </div>
 </div>

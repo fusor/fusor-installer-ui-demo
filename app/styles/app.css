@@ -21,13 +21,15 @@ i.fa-check {
 }
 
 .rhci-footer-box {
+  height: 100px;
 }
 
 .rhci-footer-hover {
     padding:15px 5px;
     text-align: center;
-    background-color:#d9edf7;
-    color:#31708f;
+    background-color: rgb(85, 77, 77); /*#d9edf7;*/
+    color: #fff; /* #31708f;*/
+    font-size:130%;
 }
 
 .rhci-install-footer {
