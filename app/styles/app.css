@@ -2,13 +2,50 @@
 
 /* CUSTOM APP *****************************/
 
+i.fa-check {
+  color: green;
+
+}
+.rhci-footer {
+  text-align: center;
+  height: 70px;
+}
+
+.rhci-footer-selected{
+  background-color: #eee; /*#5cb85c*/
+  vertical-align: middle;
+}
+
+.rhci-footer-unselected{
+  background-color:#fff;
+}
+
+.rhci-footer-box {
+}
+
+.rhci-footer-hover {
+    padding:15px 5px;
+    text-align: center;
+    background-color:#d9edf7;
+    color:#31708f;
+}
+
+.rhci-install-footer {
+  color: #000;
+  font-size: 150%;
+}
+
 .rhci-item-selected {
-  border: solid 7px black;
+  border: solid 3px rgb(85, 77, 77);
 }
 
 .rhci-item-deselected {
-  border: solid 1px gray;
-  margin: 6px;
+  border: solid 3px #999;
+  opacity: 0.5;
+}
+
+.rhci-item-hover {
+  /*opacity: 0.8;*/
 }
 
 .rhci-item-text {

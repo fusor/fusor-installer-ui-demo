@@ -32,6 +32,7 @@
     "ember-cli-bootstrap": "0.0.12",
     "glob": "^4.0.5",
     "ember-admin": "0.0.8",
-    "ember-radio-buttons": "^2.1.0"
+    "ember-radio-buttons": "^2.1.0",
+    "ember-cli-font-awesome": "0.0.4"
   }
 }

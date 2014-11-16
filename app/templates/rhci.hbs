@@ -1,8 +1,7 @@
 <div class='row'>
   <div class='col-md-12'>
-    <br /><h1>New Deployment: Select Red Hat Cloud Infrastructure Products</h1>
+    <h1>New Deployment: Select Red Hat Cloud Infrastructure Products</h1>
 
-    <br />
     Choose the products to deploy. The installer guides you through creating a new Red Hat Cloud Infrastructure
     deployment.
     <br />
@@ -13,33 +12,24 @@
 <div class='row'>
 
   <div class='col-md-4'>
-    {{#rchi-item srcImage='rhci-rhev-640-210.png' isChecked=isRhev}}
+    {{#rchi-item srcImage='rhci-rhev-640-210.png' isChecked=isRhev name='RHEV'}}
         Complete virtualization management bacon ipsum dolor sit amet kevin incididunt enim minim. Id
         officia aliqua, mollit short ribs cillum consectetur spare ribs magna commodo.
     {{/rchi-item}}
   </div>
 
   <div class='col-md-4'>
-    <div style='border:solid 1px gray;'>
-      <img src='rhci-openstack-640-210.png' class="img-responsive">
-      <div style='padding:10px'>
+    {{#rchi-item srcImage='rhci-openstack-640-210.png' isChecked=isOpenStack name='RHELOSP'}}
         Red Hat Enterprise Linux OpenStack Platform gives you a flexible, secure foundation to build a
         massively scalable private or public cloud ... lorem ipsum
-      </div>
-      <button class='btn btn-default btn-block'><i class='glyphicon glyphicon-unchecked'></i>&nbsp; Install RHELOSP</button>
-    </div>
+    {{/rchi-item}}
   </div>
 
   <div class='col-md-4'>
-    <div style='border:solid 1px gray;'>
-      <img src='rhci-cloudforms-640-210.png' class="img-responsive">
-      <div style='padding:10px'>
+    {{#rchi-item srcImage='rhci-cloudforms-640-210.png' isChecked=isCloudForms name='CloudForms'}}
         Manage your virtual, private, and hybrid cloud infrastructures. bacon ipsum dolor sit amet kevin incididunt enim minim. Id
         officia aliqua, mollit short ribs cillum consectetur spare ribs.
-        <h3>{{input type="checkbox" name="isCloudForms" checked=isCloudForms}} Install CloudForms</h3>
-      </div>
-      <button class='btn btn-default btn-block'>Select to Install CloudForms</button>
-    </div>
+    {{/rchi-item}}
   </div>
 
 </div>
@@ -48,7 +38,7 @@
   <div class='col-md-12'>
     <div style='float:right;padding-top:40px;'>
       {{#link-to 'deployments' class="btn btn-default"}}Cancel{{/link-to}}
-      {{#link-to 'deployment' class="btn btn-primary"}}Select{{/link-to}}
+      {{#link-to 'deployment' class="btn btn-primary"}}Next{{/link-to}}
     </div>
   </div>
 </div>
