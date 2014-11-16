@@ -44,7 +44,12 @@ Router.map(function() {
       this.resource('rhev-options', { path: 'configuration' });
     });
 
-    this.route('openstack');
+    this.resource('openstack', function() {
+      this.resource('osp-settings', { path: 'settings' });
+      this.resource('osp-network', { path: 'network' });
+      this.resource('osp-services', { path: 'services' });
+      this.resource('osp-configuration', { path: 'configuration' });
+    });
     this.resource('cloudforms', function() {
       this.resource('where-install');
     });
