@@ -47,7 +47,7 @@ Router.map(function() {
     this.resource('openstack', function() {
       this.resource('osp-settings', { path: 'settings' });
       this.resource('osp-network', { path: 'network' });
-      this.resource('osp-services', { path: 'services' });
+      this.resource('osp-overview', { path: 'overview' });
       this.resource('osp-configuration', { path: 'configuration' });
     });
     this.resource('cloudforms', function() {
