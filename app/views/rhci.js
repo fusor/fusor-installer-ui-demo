@@ -21,6 +21,10 @@ export default Ember.View.extend(Ember.ViewTargetActionSupport, {
   //   //alert("ClickableView was clicked!");
   // },
 
+    // didInsertElement: function(){
+    //     this.$().hide().show('slow');
+    // }
+
   // click: function() {
   //   this.triggerAction({
   //     action: 'showRHCIModal'

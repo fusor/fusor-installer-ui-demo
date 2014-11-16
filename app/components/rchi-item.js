@@ -29,6 +29,10 @@ export default Ember.Component.extend({
     this.set('isHover', false);
   },
 
+  // didInsertElement: function(){
+  //     this.$().hide().show('fast');
+  // }
+
   // actions: {
   //   toggleHover: function() {
   //     this.set('isHover', this.toggleProperty('isHover'));

@@ -1,12 +1,16 @@
 
 <img {{bind-attr src=srcImage}} class="img-responsive">
 
-  <div {{bind-attr class=":rhci-footer-box isHover:rhci-footer-hover"}}>
+  <div {{bind-attr class=":rhci-footer-box"}}>
        {{#if showMsgToSelect}}
-         Click to select {{name}} to Install
+         {{#rhci-hover-text}}
+           Click to select {{name}} to Install
+         {{/rhci-hover-text}}
        {{else}}
          {{#if showMsgToDeselect}}
-           Click to deselect {{name}}
+           {{#rhci-hover-text}}
+             Click to deselect {{name}}
+           {{/rhci-hover-text}}
          {{else}}
           <div class='rhci-item-text'>
             {{yield}}
