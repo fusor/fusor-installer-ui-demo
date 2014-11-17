@@ -11079,11 +11079,8 @@ nav {
 
 */
 .notepad {
- background: url(/notebook.png) repeat-y;
  width: 100%;
  height: 100%;
- font: normal 18px verdana;
- line-height: 22px;
  padding: 44px 10px;
  border: solid 1px #ddd;
  z-index: -2;
