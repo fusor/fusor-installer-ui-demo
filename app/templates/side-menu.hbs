@@ -1,13 +1,14 @@
-<div {{bind-attr class="showSideMenu:nav-expanded"}}>
-  <a {{action 'toggleSideMenu'}} id="nav-expander" class="nav-expander fixed">
-    UX Notes &nbsp;<i class="fa fa-bars fa-lg white"></i>
-  </a>
+<div class='row'>
+  <div {{bind-attr class=":col-md-12 showSideMenu:nav-expanded"}}>
+    <a {{action 'toggleSideMenu'}} id="nav-expander" class="nav-expander fixed">
+      UX Notes &nbsp;<i class="fa fa-bars fa-lg white"></i>
+    </a>
 
-  <nav>
-    <a {{action 'toggleSideMenu'}} id="nav-close">X</a>
-        <iframe class='notepad' src="http://rhci.pad.engineering.redhat.com/wireframe-mtg-10-30-2014"></iframe>
-  </nav>
+    <nav>
+      <a {{action 'toggleSideMenu'}} id="nav-close">X</a>
+          <iframe class='notepad' src="http://rhci.pad.engineering.redhat.com/wireframe-mtg-10-30-2014"></iframe>
+    </nav>
 
 
+  </div>
 </div>
-

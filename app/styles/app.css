@@ -10962,10 +10962,10 @@ nav {
   height: 100%;
   overflow: auto;
   position: fixed;
-  right: -30em;
+  right: -33em;
   font-size: 15px;
   top: 0px;
-  width: 30em;
+  width: 33em;
   z-index: 2000;
   color: #fff;
   transition: right 0.3s ease-in-out 0s;
@@ -11083,6 +11083,6 @@ nav {
  height: 100%;
  padding: 44px 10px;
  border: solid 1px #ddd;
- z-index: -2;
+ z-index: 3000;
  color:#000;
 }
