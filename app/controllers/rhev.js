@@ -1,7 +1,7 @@
 import Ember from 'ember';
 
 export default Ember.Controller.extend({
-  needs: ['application', 'rhev-setup'],
+  needs: ['application', 'rhev-setup', 'side-menu'],
 
   rhevSetup: Ember.computed.alias("controllers.rhev-setup.rhevSetup"),
 

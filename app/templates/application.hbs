@@ -6,10 +6,10 @@
   {{render "mainmenu"}}
 {{/if}}
 
+{{render 'side-menu'}}
 <div {{bind-attr class="isLoggedIn:container"}}>
   {{outlet}}
 </div>
-
 <!-- MODALS -->
 
 {{#bs-modal name="myModal" fade=true footerButtonsBinding="myModalButtons" title="My Modal"}}

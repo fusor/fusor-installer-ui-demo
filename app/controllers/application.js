@@ -8,7 +8,6 @@ export default Ember.Controller.extend({
   isPasswordSet: false,
   dontHideMainMenu: true,
 
-
   myModalButtons: [
       Ember.Object.create({title: 'Submit', type: 'primary', clicked:"submit"}),
       Ember.Object.create({title: 'Cancel', clicked:"cancel", dismiss: 'modal'})
@@ -43,6 +42,12 @@ export default Ember.Controller.extend({
     //Show the modal
     show: function() {
       return Bootstrap.ModalManager.show('myModal');
+    },
+
+    // show side menu
+    toggleSideMenu: function() {
+      this.set('showSideMenu', this.toggleProperty('showSideMenu'));
     }
+
   }
 });

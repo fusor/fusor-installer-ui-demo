@@ -1,5 +1,6 @@
 {{#base-f label=label labelSize=labelSize inputSize=inputSize help-inline=help-inline}}
 
-  {{textarea class="form-control" size="30" value=value placeholder=placeholder rows=numRows}}
+  {{textarea class=class value=value placeholder=placeholder}}
+  {{yield}}
 
 {{/base-f}}
