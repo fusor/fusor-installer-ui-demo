@@ -5,8 +5,9 @@
 
   <nav>
     <a {{action 'toggleSideMenu'}} id="nav-close">X</a>
-    <form class="form-horizontal" role="form">
-      {{textarea class='form-control notepad' value=uxNotesDisplay}}
+      <div class='notepad'>
+        {{showdown-addon uxNotesDisplay}}
+      </div>
     </form>
   </nav>
 </div>

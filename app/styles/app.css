@@ -11078,7 +11078,7 @@ nav {
 }
 
 */
-textarea.notepad {
+.notepad {
  background: url(/notebook.png) repeat-y;
  width: 100%;
  height: 100%;
