@@ -1,0 +1,21 @@
+<div class="row tabbed_side_nav_form">
+
+  <ul class="nav nav-pills nav-stacked col-md-3">
+      {{#link-to 'satellite.index' tagName='li'}}
+        <a>Select Subscriptions</a>
+      {{/link-to}}
+
+      {{#link-to 'configure-organization' tagName='li'}}
+        <a>Review Installation</a>
+      {{/link-to}}
+
+      {{#link-to 'configure-environment' tagName='li'}}
+        <a>Installation Progress</a>
+      {{/link-to}}
+  </ul>
+
+  <div class="tab-content col-md-9">
+      {{outlet}}
+  </div>
+
+</div>

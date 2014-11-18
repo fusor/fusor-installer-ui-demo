@@ -22,8 +22,6 @@ Router.map(function() {
       this.resource('configure');
       this.resource('configure-organization');
       this.resource('configure-environment');
-      this.route('subscriptions');
-      this.route('products');
     });
 
     this.resource('rhev', function() {
@@ -53,7 +51,10 @@ Router.map(function() {
     this.resource('cloudforms', function() {
       this.resource('where-install');
     });
-    this.route('review');
+    this.resource('review', function() {
+      this.resource('subscriptions');
+      this.resource('products');
+    });
   });
 
 
