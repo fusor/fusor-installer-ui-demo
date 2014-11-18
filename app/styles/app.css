@@ -10919,9 +10919,15 @@ label.env_path_active:after {
 
 /* off canvas */
 
+.uxnotes {
+  margin:0;
+  padding:0;
+  color: #ff4 !important;
+}
+
 a.nav-expander {
-  color: #ff4;
-  display: block;
+  color: #ff4 !important;
+/*  display: block;
   font-size: 15px;
   font-weight: 400;
   height: 0px;
@@ -10942,7 +10948,7 @@ a.nav-expander {
   -moz-transition: right 0.3s ease-in-out 0s;
   -o-transition: right 0.3s ease-in-out 0s;
 
-}
+*/}
 
 a.nav-expander:hover {
   cursor: pointer;

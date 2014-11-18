@@ -1,14 +1,8 @@
 <div class='row'>
   <div {{bind-attr class=":col-md-12 :embed-responsive showSideMenu:nav-expanded"}}>
-    <a {{action 'toggleSideMenu'}} id="nav-expander" class="nav-expander fixed">
-      UX Notes &nbsp;<i class="fa fa-bars fa-lg white"></i>
-    </a>
-
     <nav>
       <a {{action 'toggleSideMenu'}} id="nav-close">X</a>
       <iframe class='notepad embed-responsive-item' {{bind-attr src=etherpadUrl}}></iframe>
     </nav>
-
-
   </div>
 </div>
