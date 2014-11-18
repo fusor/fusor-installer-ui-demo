@@ -6,7 +6,7 @@ export default Ember.Route.extend({
     controller.set('organizations', this.store.find('organization'));
   },
   activate: function() {
-    this.controllerFor('side-menu').set('etherpadName', '41'); //route-satellite
+    this.controllerFor('side-menu').set('etherpadName', '43'); //route-configure-organization
   },
 
   deactivate: function() {

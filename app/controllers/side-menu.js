@@ -1,7 +1,7 @@
 import Ember from 'ember';
 
 export default Ember.Controller.extend({
-  showSideMenu: false,
+  showSideMenu: true,
 
   uxDefaultNote: 'Note: Please write notes on [etherpad](http://rhci.pad.engineering.redhat.com/wireframe-mtg-10-30-2014), since this pad is ready-only and will note save anything.\n\n',
   uxHeaderNote: '\n\n\n**UX Notes / Specs** for this route\n\n',

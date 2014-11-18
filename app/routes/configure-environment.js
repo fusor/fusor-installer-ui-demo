@@ -6,5 +6,12 @@ export default Ember.Route.extend({
     controller.set('environments', this.store.find('environment'));
     controller.set('newenvs', this.store.find('newenv'));
   },
+  activate: function() {
+    this.controllerFor('side-menu').set('etherpadName', '44'); //route-configure-environment
+  },
+
+  deactivate: function() {
+    this.controllerFor('side-menu').set('etherpadName', '');
+  }
 
 });

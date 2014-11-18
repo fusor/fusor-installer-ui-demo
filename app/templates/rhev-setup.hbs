@@ -1,22 +1,26 @@
+<div class='row'>
+  <div class='col-md-8 col-md-offset-1'>
 
-<div class='row'>
-  <div class='col-md-12'>
-      <h4>{{radio-button-f checked=rhevSetup value="selfhost" label='Self Hosted'}}</h4>
-  </div>
-</div>
-<div class='row'>
-  <div class='col-md-offset-2 col-md-8'>
-      Description text that self hosted means this .....
-  </div>
-</div>
-<div class='row'>
-  <div class='col-md-12'>
-      <h4>{{radio-button-f checked=rhevSetup value="rhevhost" label='RHEV Host'}}</h4>
-  </div>
-</div>
-<div class='row'>
-  <div class='col-md-offset-2 col-md-8'>
-      Description text that self hosted means this .....
+    <div class='row'>
+      <h3>{{radio-button-f checked=rhevSetup value="selfhost" label='Self Hosted'}}</h3>
+      <div class='col-md-offset-1'>
+          Description text that self hosted means this .....
+      </div>
+    </div>
+
+    <div class='row'>
+      <h3>{{radio-button-f checked=rhevSetup value="rhevhost" label='RHEV Host + Engine'}}</h3>
+      <div class='col-md-offset-1'>
+          Description text that self hosted means this .....
+      </div>
+    </div>
+
+    <div class='pull-right'>
+      <br />
+      <button {{action 'showModal' 'cancelDeploymentModal'}} class='btn btn-default'>Cancel</button>
+      {{#link-to 'hypervisor.discovered-host' class='btn btn-primary'}}Next{{/link-to}}
+    </div>
+
   </div>
 </div>
 
