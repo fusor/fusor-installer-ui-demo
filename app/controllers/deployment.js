@@ -9,7 +9,7 @@ export default Ember.ObjectController.extend({
   isCloudForms: Ember.computed.alias("controllers.rhci.isCloudForms"),
   name: Ember.computed.alias("controllers.satellite/index.name"),
 
-  disableReview: Ember.computed.alias("controllers.satellite/subscriptions.disableNext"),
+  disableReview: false, //Ember.computed.alias("controllers.satellite/subscriptions.disableNext"),
   stepNumberRhev: 2,
 
   stepNumberOpenstack: function() {
