@@ -1,8 +1,3 @@
-    {{bs-button title="Show Modal" clicked="show"}}
-    {{#bs-modal name="myModal" fade=true footerButtonsBinding="myModalButtons" title="My Modal"}}
-        <p>Modal content!</p>
-    {{/bs-modal}}
-
 <br />
 {{#if attachingInProgress}}
   Attaching subscriptions ({{prog}}% complete)
@@ -62,5 +57,5 @@
 
 <div style='text-align:right'>
   <button {{action 'showModal' 'cancel-modal'}} class='btn btn-default'>Cancel</button>
-  {{#link-to 'satellite.products' class='btn btn-primary' disabled=disableNext}}Next{{/link-to}}
+  {{#link-to 'review.installation' class='btn btn-primary' disabled=disableNext}}Next{{/link-to}}
 </div>

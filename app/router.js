@@ -54,6 +54,8 @@ Router.map(function() {
     this.resource('review', function() {
       this.resource('subscriptions');
       this.resource('products');
+      this.route('installation');
+      this.route('progress');
     });
   });
 
@@ -66,6 +68,8 @@ Router.map(function() {
 
 
   this.route('hostgroup/edit');
+  this.route('review/installation');
+  this.route('review/progress');
 });
 
 export default Router;

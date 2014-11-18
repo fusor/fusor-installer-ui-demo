@@ -1,15 +1,15 @@
 <div class="row tabbed_side_nav_form">
 
   <ul class="nav nav-pills nav-stacked col-md-3">
-      {{#link-to 'satellite.index' tagName='li'}}
+      {{#link-to 'subscriptions' tagName='li'}}
         <a>Select Subscriptions</a>
       {{/link-to}}
 
-      {{#link-to 'configure-organization' tagName='li'}}
+      {{#link-to 'review.installation' tagName='li' disabled=disableTabInstallation}}
         <a>Review Installation</a>
       {{/link-to}}
 
-      {{#link-to 'configure-environment' tagName='li'}}
+      {{#link-to 'review.progress' tagName='li' disabled=disableTabProgress}}
         <a>Installation Progress</a>
       {{/link-to}}
   </ul>

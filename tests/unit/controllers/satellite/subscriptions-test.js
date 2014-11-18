@@ -3,7 +3,7 @@ import {
   test
 } from 'ember-qunit';
 
-moduleFor('controller:satellite/subscriptions', 'SatelliteSubscriptionsController', {
+moduleFor('controller:subscriptions', 'SatelliteSubscriptionsController', {
   // Specify the other units that are required for this test.
   // needs: ['controller:foo']
 });

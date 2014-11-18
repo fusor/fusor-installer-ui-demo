@@ -3,7 +3,7 @@ import {
   test
 } from 'ember-qunit';
 
-moduleFor('route:subscriptions', 'SatelliteSubscriptionsRoute', {
+moduleFor('route:review/installation', 'ReviewInstallationRoute', {
   // Specify the other units that are required for this test.
   // needs: ['controller:foo']
 });

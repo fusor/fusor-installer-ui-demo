@@ -29,7 +29,6 @@ export default Ember.ArrayController.extend({
   prog: 20,
   incrementBy: 20,
 
-
   disableAttachButton: function() {
     return (this.get('totalSelectedCount') === 0);
   }.property('totalSelectedCount'),
