@@ -6,7 +6,6 @@ module.exports = function(environment) {
     environment: environment,
     baseURL: '/',
     locationType: 'hash',
-    contentSecurityPolicyHeader: 'Disabled-Content-Security-Policy',
     EmberENV: {
       FEATURES: {
         // Here you can enable experimental features on an ember canary build
