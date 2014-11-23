@@ -1,12 +1,25 @@
-{{#if isLoggedIn}}
-  {{partial "topbar"}}
-{{/if}}
+{{#if false}}
+  {{#if isLoggedIn}}
+    {{partial "topbar"}}
+  {{/if}}
 
-{{#if showMainMenu}}
-  {{partial "mainmenu"}}
+  {{#if showMainMenu}}
+    {{partial "mainmenu"}}
+  {{/if}}
+
+{{else}}
+
+      <li class="dropdown menu_tab_dropdown">
+        <a {{!action 'toggleSideMenu'}} class="uxnotes">
+        UX Notes &nbsp;<i class="fa fa-bars fa-lg white"></i>
+        </a>
+      </li>
+
+
 {{/if}}
 
 {{render 'side-menu'}}
+
 <div {{bind-attr class="isLoggedIn:container"}}>
   {{outlet}}
 </div>
