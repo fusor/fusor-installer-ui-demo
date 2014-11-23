@@ -4,6 +4,7 @@ export default Ember.Controller.extend({
   needs: ['side-menu'],
   showMainMenu: Ember.computed.and('isLoggedIn', 'isPasswordSet', 'dontHideMainMenu'),
   showSideMenu: Ember.computed.alias("controllers.side-menu.showSideMenu"),
+  devMode: false,
 
   isLoggedIn: false,
   isPasswordSet: false,

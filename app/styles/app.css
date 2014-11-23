@@ -1,3 +1,7 @@
+#ember-app {
+  padding-top: 40px;
+}
+
 .pager{
     position:absolute;
     left:-50px;
@@ -10920,9 +10924,12 @@ label.env_path_active:after {
 /* off canvas */
 
 .uxnotes {
+  position: fixed;
+  right:25px;
+  top: 75px;
   margin:0;
   padding:0;
-  color: #ff4 !important;
+/*  color: #ff4 !important;*/
 }
 
 a.nav-expander {

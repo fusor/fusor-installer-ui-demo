@@ -1,4 +1,4 @@
-{{#if false}}
+{{#if devMode}}
   {{#if isLoggedIn}}
     {{partial "topbar"}}
   {{/if}}
@@ -8,14 +8,11 @@
   {{/if}}
 
 {{else}}
-
-      <li class="dropdown menu_tab_dropdown">
-        <a {{!action 'toggleSideMenu'}} class="uxnotes">
+  <div class="pull-right">
+        <a {{action 'toggleSideMenu'}} class="uxnotes">
         UX Notes &nbsp;<i class="fa fa-bars fa-lg white"></i>
         </a>
-      </li>
-
-
+  </div>
 {{/if}}
 
 {{render 'side-menu'}}
