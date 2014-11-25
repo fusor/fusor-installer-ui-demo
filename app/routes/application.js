@@ -20,7 +20,6 @@ export default Ember.Route.extend({
     controller.set('isLoggedIn', true);
     controller.set('isPasswordSet', true);
     controller.set('dontHideMainMenu', true);
-    controller.set('fqdn', 'dhcp-22-172.tlv.redhat.com');
   },
 
   actions: {
@@ -64,11 +63,6 @@ export default Ember.Route.extend({
     //Show the modal
     showRHCIModal: function() {
       return Bootstrap.ModalManager.show('newRHCI');
-    },
-
-    //ddd
-    ddd: function() {
-      alert('ddd');
     },
 
   }
