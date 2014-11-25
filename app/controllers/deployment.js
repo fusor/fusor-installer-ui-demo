@@ -7,6 +7,13 @@ export default Ember.ObjectController.extend({
   isRhev: Ember.computed.alias("controllers.rhci.isRhev"),
   isOpenStack: Ember.computed.alias("controllers.rhci.isOpenStack"),
   isCloudForms: Ember.computed.alias("controllers.rhci.isCloudForms"),
+
+  nameRHCI: Ember.computed.alias("controllers.rhci.nameRHCI"),
+  nameRhev: Ember.computed.alias("controllers.rhci.nameRhev"),
+  nameOpenStack: Ember.computed.alias("controllers.rhci.nameOpenStack"),
+  nameCloudForms: Ember.computed.alias("controllers.rhci.nameCloudForms"),
+  nameSatellite: Ember.computed.alias("controllers.rhci.nameSatellite"),
+
   name: Ember.computed.alias("controllers.satellite/index.name"),
 
   disableReview: false, //Ember.computed.alias("controllers.subscriptions.disableNext"),

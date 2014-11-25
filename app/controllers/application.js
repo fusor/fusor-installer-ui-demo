@@ -1,10 +1,13 @@
 import Ember from 'ember';
 
 export default Ember.Controller.extend({
-  needs: ['side-menu'],
+  needs: ['side-menu', 'rhci'],
+
+  isUpstream: true,
+  emberCliMode: true,
+
   showMainMenu: Ember.computed.and('isLoggedIn', 'isPasswordSet', 'dontHideMainMenu'),
   showSideMenu: Ember.computed.alias("controllers.side-menu.showSideMenu"),
-  emberCliMode: false,
 
   isLoggedIn: false,
   isPasswordSet: false,
@@ -14,6 +17,12 @@ export default Ember.Controller.extend({
       Ember.Object.create({title: 'Submit', type: 'primary', clicked:"submit"}),
       Ember.Object.create({title: 'Cancel', clicked:"cancel", dismiss: 'modal'})
   ],
+
+  nameRHCI: Ember.computed.alias("controllers.rhci.nameRHCI"),
+  nameRhev: Ember.computed.alias("controllers.rhci.nameRhev"),
+  nameOpenStack: Ember.computed.alias("controllers.rhci.nameOpenStack"),
+  nameCloudForms: Ember.computed.alias("controllers.rhci.nameCloudForms"),
+  nameSatellite: Ember.computed.alias("controllers.rhci.nameSatellite"),
 
   actions: {
     signIn: function() {
