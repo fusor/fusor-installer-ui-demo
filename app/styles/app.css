@@ -10929,7 +10929,7 @@ label.env_path_active:after {
   top: 75px;
   margin:0;
   padding:0;
-/*  color: #ff4 !important;*/
+  z-index: 3000;
 }
 
 a.nav-expander {

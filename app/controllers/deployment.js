@@ -14,7 +14,7 @@ export default Ember.ObjectController.extend({
   nameCloudForms: Ember.computed.alias("controllers.rhci.nameCloudForms"),
   nameSatellite: Ember.computed.alias("controllers.rhci.nameSatellite"),
 
-  name: Ember.computed.alias("controllers.satellite/index.name"),
+  deploymentName: Ember.computed.alias("controllers.satellite/index.name"),
 
   disableReview: false, //Ember.computed.alias("controllers.subscriptions.disableNext"),
   stepNumberRhev: 2,
