@@ -58,7 +58,7 @@ export default Ember.Controller.extend({
     // show side menu
     toggleSideMenu: function() {
       this.set('showSideMenu', this.toggleProperty('showSideMenu'));
-    }
+    },
 
   }
 });

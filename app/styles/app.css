@@ -10929,9 +10929,59 @@ label.env_path_active:after {
   top: 75px;
   margin:0;
   padding:0;
-  z-index: 3000;
+  z-index: 1000;
+  border: 1px black solid;
+  padding:5px;
+  background-color: #000;
+  color: #fff;
 }
 
+a.uxnotes:hover{
+  color: #fff;
+}
+
+.toggle_updown {
+  position: fixed;
+  left:25px;
+  top: 75px;
+  margin:0;
+  padding:0;
+  z-index: 3000;
+  border: 1px black solid;
+}
+
+.updown {
+  padding:5px;
+}
+
+.active_upstream {
+  background-color: #000;
+}
+
+.nonactive_upstream {
+  background-color: #fff;
+}
+
+.active_downstream {
+  background-color: #000;
+}
+
+.nonactive_downstream {
+  background-color: #fff;
+}
+
+.active_upstream a{
+  color: #fff;
+}
+.nonactive_upstream a{
+  color: #000;
+}
+.active_downstream a{
+  color: #fff;
+}
+.nonactive_downstream a{
+  color: #000;
+}
 a.nav-expander {
   color: #ff4 !important;
 /*  display: block;
