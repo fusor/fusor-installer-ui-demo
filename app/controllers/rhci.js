@@ -41,6 +41,12 @@ export default Ember.ObjectController.extend({
     if (this.get('isUpstream')) { return "assets/manageiq-640-210.png"; } else { return "assets/rhci-cloudforms-640-210.png"; }
   }.property('isUpstream'),
 
+  nameSelectSubscriptions: function() {
+    if (this.get('isUpstream')) { return "Select Content Source"; } else { return "Select Subscriptions"; }
+  }.property('isUpstream'),
+
+
+
 
   disableNext: function () {
     return (!(this.get('isRhev') || this.get('isOpenStack') || this.get('isCloudForms')));

@@ -4,7 +4,7 @@ export default Ember.Controller.extend({
   needs: ['side-menu', 'rhci'],
 
   isUpstream: true,
-  emberCliMode: true,
+  isEmberCliMode: true,
 
   showMainMenu: Ember.computed.and('isLoggedIn', 'isPasswordSet', 'dontHideMainMenu'),
   showSideMenu: Ember.computed.alias("controllers.side-menu.showSideMenu"),

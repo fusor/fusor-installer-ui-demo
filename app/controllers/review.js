@@ -2,9 +2,16 @@ import Ember from 'ember';
 
 export default Ember.Controller.extend({
 
-  needs: ['subscriptions'],
+  needs: ['subscriptions', 'rhci', 'application'],
 
-  disableTabInstallation: Ember.computed.alias("controllers.subscriptions.disableNext"),
-  disableTabProgress: true
+  isUpstream: Ember.computed.alias("controllers.application.isUpstream"),
+  disableNext: Ember.computed.alias("controllers.subscriptions.disableNext"),
+  disableTabProgress: true,
+
+  disableTabInstallation: function() {
+    return (this.get('disableNext') && (!(this.get('isUpstream'))));
+  }.property('disableNext', 'isUpstream'),
+
+  nameSelectSubscriptions: Ember.computed.alias("controllers.rhci.nameSelectSubscriptions"),
 
 });

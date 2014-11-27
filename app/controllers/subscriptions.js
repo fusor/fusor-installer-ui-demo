@@ -1,6 +1,9 @@
 import Ember from 'ember';
 
 export default Ember.ArrayController.extend({
+  needs: ['application'],
+
+  isUpstream: Ember.computed.alias("controllers.application.isUpstream"),
 
   isOnlyShowSubscriptions: true,
 
