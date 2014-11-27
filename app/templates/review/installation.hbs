@@ -1,10 +1,16 @@
 <div class='row'>
-  <div class='col-md-8 col-md-offset-0'>
-{{aa}}
-    {{#accordion-item name=nameRhev isOpen=false}}
-      List 1<br />
-      List 2<br />
-      List 3<br />
+  <div class='col-md-12'>
+
+  Name: {{#link-to 'satellite'}}{{nameDeployment}}{{/link-to}}
+<br />
+  Organization: {{#link-to 'configure-organization'}}{{selectedOrganization}}{{/link-to}}
+<br />
+  Environment: {{#link-to 'configure-environment'}}{{selectedEnvironment}}{{/link-to}}
+<br />
+
+    {{#accordion-item name=nameRhev isOpen=true}}
+      Setup Type: {{#link-to 'rhev-setup'}} {{oVirtHostedtype}} {{/link-to}}
+      <br />
     {{/accordion-item}}
 
     {{#accordion-item name=nameOpenStack isOpen=false}}
