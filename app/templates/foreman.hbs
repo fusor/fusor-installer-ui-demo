@@ -1,13 +1,13 @@
 <div class='row'>
   <div class='col-md-12'>
     <form class='form form-horitzonal' role='form'>
-    {{text-f label='Name of foreman root directory' value=foreman-app-root help-inline='--foreman-app-root'}}
-    {{text-f label='Enable users authentication' value=foreman-authentication help-inline='--foreman-authentication (default user:admin pw:changeme)'}}
+    {{text-f label='Name of foreman root directory' value=app_root help-inline='--foreman-app-root'}}
+    {{text-f label='Enable users authentication' value=authentication help-inline='--foreman-authentication (default user:admin pw:changeme)'}}
     {{text-f label='If disabled the EPEL repo will not be configured on RedHat family systems' value=foreman-configure-epel-repo help-inline='--foreman-configure-epel-repo'}}
     {{text-f label='If disabled the the SCL repo will not be configured on Red Hat clone systems. (Currently only installs repos for CentOS and Scientific' value=foreman-configure-scl-repo help-inline='--foreman-configure-scl-repo'}}
     {{text-f label='No need to change anything here by default if set to true, no repo will be added by this module, letting you to set it to some custom location' value=foreman-custom-repo help-inline='--foreman-custom-repo'}}
 <hr />
-    {{text-f label='Database "production" adapter' value=foreman-db-adapter help-inline='--foreman-db-adapter'}}
+    {{text-f label='Database "production" adapter' value=db_adapter help-inline='--foreman-db-adapter'}}
     {{text-f label='Database "production" database (e.g. foreman)' value=foreman-db-database help-inline='--foreman-db-database'}}
     {{text-f label='Database "production" host' value=foreman-db-host help-inline='--foreman-db-host'}}
     {{text-f label='if enabled, will install and configure the database server on this host' value=foreman-db-manage help-inline='--foreman-db-manage'}}
@@ -15,7 +15,7 @@
     {{text-f label='Database "production" port' value=foreman-db-port help-inline='--foreman-db-port'}}
     {{text-f label='Database "production" ssl mode' value=foreman-db-sslmode help-inline='--foreman-db-sslmode'}}
     {{text-f label='Database "production" ssl type (valid types: mysql/postgresql/sqlite)' value=foreman-db-type help-inline='--foreman-db-type'}}
-    {{text-f label='Database "production" user (e.g. foreman)' value=foreman-db-username help-inline='--foreman-db-username'}}
+    {{text-f label='Database "production" user (e.g. foreman)' value=db_username help-inline='--foreman-db-username'}}
     {{text-f label='Rails environment of foreman' value=foreman-environment help-inline='--foreman-environment'}}
     {{text-f label='URL on which foreman is going to run' value=foreman-foreman-url help-inline='--foreman-foreman-url'}}
     {{text-f label='turn on/off gpg check in repo files (effective only on RedHat family systems)' value=foreman-gpgcheck help-inline='--foreman-gpgcheck'}}
