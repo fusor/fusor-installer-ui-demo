@@ -10,6 +10,17 @@ var Router = Ember.Router.extend({
 });
 
 Router.map(function() {
+
+  this.resource('installer', function() {
+    this.resource('foreman');
+    this.resource('smart-proxy');
+    this.resource('compute-resources');
+    this.resource('katello');
+    this.resource('puppet');
+    this.resource('plugins');
+    this.resource('installer-review', { path: '/installer/review' });
+  });
+
   this.route('login');
   this.route ('setpassword');
 

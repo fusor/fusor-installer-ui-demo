@@ -1,0 +1,26 @@
+<br />
+
+<h1>Welcome to the {{nameSatellite}} installer!</h1>
+
+This wizard will gather all required information. You can change any parameter
+to your needs.
+<hr />
+
+model is {{controller.model.puppet.configtimeout}}
+
+<br />
+<ul class="wizard">
+  {{#link-to 'foreman' tagName='li'}}{{step-number value=1}}{{nameSatellite}}{{/link-to}}
+  {{#link-to 'smart-proxy' tagName='li'}}{{step-number value=2}}{{nameCapsule}}{{/link-to}}
+  {{#link-to 'compute-resources' tagName='li'}}{{step-number value=3}}Compute Resources{{/link-to}}
+  {{!#link-to 'katello' tagName='li'}}{{!step-number value=4}}{{!nameKatello}}{{!/link-to}}
+  {{#link-to 'puppet' tagName='li'}}{{step-number value=4}}Puppet{{/link-to}}
+  {{#link-to 'plugins' tagName='li'}}{{step-number value=5}}Plugins{{/link-to}}
+  {{#link-to 'installer-review' tagName='li'}}{{step-number value=6}}Review{{/link-to}}
+</ul>
+
+{{outlet}}
+<hr />
+<div class='text-right'>
+  <button class='btn btn-primary'>Install</button>
+</div>

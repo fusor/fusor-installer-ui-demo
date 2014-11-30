@@ -12,6 +12,7 @@ export default Ember.Controller.extend({
   isLoggedIn: false,
   isPasswordSet: false,
   dontHideMainMenu: true,
+  hideUserMenu: false,
 
   myModalButtons: [
       Ember.Object.create({title: 'Submit', type: 'primary', clicked:"submit"}),
@@ -23,6 +24,7 @@ export default Ember.Controller.extend({
   nameOpenStack: Ember.computed.alias("controllers.rhci.nameOpenStack"),
   nameCloudForms: Ember.computed.alias("controllers.rhci.nameCloudForms"),
   nameSatellite: Ember.computed.alias("controllers.rhci.nameSatellite"),
+  nameCapsule: Ember.computed.alias("controllers.rhci.nameCapsule"),
 
   actions: {
     signIn: function() {

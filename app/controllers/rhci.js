@@ -45,7 +45,13 @@ export default Ember.ObjectController.extend({
     if (this.get('isUpstream')) { return "Select Content Source"; } else { return "Select Subscriptions"; }
   }.property('isUpstream'),
 
+  nameCapsule: function() {
+    if (this.get('isUpstream')) { return "Smart Proxy"; } else { return "Capsule"; }
+  }.property('isUpstream'),
 
+  nameKatello: function() {
+    if (this.get('isUpstream')) { return "Katello"; } else { return "Content"; }
+  }.property('isUpstream'),
 
 
   disableNext: function () {
