@@ -1,44 +1,114 @@
-Enable/disable foreman_plugin_ovirt_provision module, current value:
-<br />
-Enable/disable foreman_plugin_discovery module,
-<br />
+
+      {{input type="checkbox" name="ovirt_provision" checked=ovirt_provision}}
+      Enable foreman_plugin_ovirt_provision module
 
 <br />
-  1. Enable/disable foreman_plugin_discovery module, current value: true
-  2. Set version, current value: latest
-  3. Set initrd, current value: foreman-discovery-image-latest.el6.iso-img
-  4. Set install_images, current value: false
-  5. Set source, current value:
-  http://downloads.theforeman.org/discovery/releases/latest/
-  6. Set kernel, current value: foreman-discovery-image-latest.el6.iso-vmlinuz
+<br />
+
+      {{input type="checkbox" name="discovery" checked=discovery}}
+      Enable foreman_plugin_discovery module
+<br />
+      {{#if discovery}}
+        {{text-f label='version'
+                 value='latest'
+                 }}
+        {{text-f label='initrd'
+                 value='foreman-discovery-image-latest.el6.iso-img'
+                 }}
+        {{true-false-f label='install_images'
+                       isTrue=install_images
+                       }}
+        {{text-f label='source'
+                 value='http://downloads.theforeman.org/discovery/releases/latest/'
+                 }}
+        {{text-f label='kernel'
+                 value='foreman-discovery-image-latest.el6.iso-vmlinuz'
+                 }}
+      {{/if}}
+<br />
+
+
+      {{input type="checkbox" name="foreman_cli" checked=foreman_cli}}
+      Enable foreman_cli module
+<br />
+      {{#if foreman_cli}}
+        {{true-false-f label='refresh_cache'
+                       isTrue=true
+                       }}
+        {{true-false-f label='manage_root_config'
+                       isTrue=true
+                       }}
+        {{text-f label='request_timeout'
+                 value='120'
+                 }}
+
+      {{/if}}
+<br />
+
+      {{input type="checkbox" name="bootdisk" checked=bootdisk}}
+      Enable foreman_plugin_bootdisk module
 
 <br />
-  Module foreman_cli configuration
-1. Enable/disable foreman_cli module, current value: true
-2. Configure Advanced parameters
-3. Configure Advanced parameters
-4. Back to main menu
+<br />
+
+      {{input type="checkbox" name="default_hostgroup" checked=default_hostgroup}}
+      Enable foreman_plugin_default_hostgroup module
 
 <br />
-Enable/disable foreman_plugin_bootdisk module, current value: true
+<br />
+
+      {{input type="checkbox" name="setup" checked=setup}}
+      Enable foreman_plugin_setup module
 
 <br />
-Enable/disable foreman_plugin_default_hostgroup module, current value:
+<br />
 
-Enable/disable foreman_plugin_setup module,
+      {{input type="checkbox" name="templates" checked=templates}}
+      Enable foreman_plugin_templates module
 
-Enable/disable foreman_plugin_templates module,
+<br />
+<br />
 
-Enable/disable foreman_plugin_tasks module, current value:
 
-Enable/disable foreman_plugin_hooks module, current value: true
+      {{input type="checkbox" name="tasks" checked=tasks}}
+      Enable foreman_plugin_tasks module
 
-Enable/disable foreman_plugin_puppetdb module,
+<br />
+<br />
 
-Enable/disable foreman_plugin_ovirt_provision module,
 
-Enable/disable foreman_proxy_plugin_pulp module, current value: false
-2. Set group, current value:
-3. Set enabled, current value: true
-4. Set pulp_url, current value: https://jmagen.csb/pulp
+      {{input type="checkbox" name="hooks " checked=hooks }}
+      Enable foreman_plugin_hooks  module
+
+<br />
+<br />
+
+      {{input type="checkbox" name="puppetdb " checked=puppetdb }}
+      Enable foreman_plugin_puppetdb  module
+
+<br />
+<br />
+
+
+      {{input type="checkbox" name="ovirt_provision " checked=ovirt_provision }}
+      Enable foreman_plugin_ovirt_provision  module
+
+<br />
+<br />
+
+      {{input type="checkbox" name="pulp" checked=pulp}}
+      Enable pulp module
+<br />
+      {{#if pulp}}
+        {{text-f label='group'
+                 value=''
+                 }}
+        {{text-f label='pulp_url'
+                 value='https://jmagen.csb/pulp'
+                 }}
+      {{/if}}
+<br />
+
+
+
 

@@ -70,54 +70,196 @@
              value=puppet.runinterval
              help-inline='--puppet-runinterval'}}
 
-<br />
-<br />
-<br />
-<br />
-    {{text-f label='Select the mode to setup the puppet agent. Can be either \'cron\' or \'service\'.' value=puppet-runmode help-inline='--puppet-runmode'}}
-    {{text-f label='Should a puppet master be installed as well as the client' value=puppet-server help-inline='--puppet-server'}}
-    {{text-f label='Directory where the application lives' value=puppet-server-app-root help-inline='--puppet-server-app-root'}}
-    {{text-f label='Provide puppet CA' value=puppet-server-ca help-inline='--puppet-server-ca'}}
-    {{text-f label='The name to use when handling certificates.' value=puppet-server-certname help-inline='--puppet-server-certname'}}
-    {{text-f label='Common modules paths (only when $server_git_repo_path and $server_dynamic_environments are false)' value=puppet-server-common-modules-path help-inline='--puppet-server-common-modules-path'}}
-    {{text-f label='How to determine the configuration version. When using git_repo, by default a git describe approach will be installed.' value=puppet-server-config-version help-inline='--puppet-server-config-version'}}
-    {{text-f label='Puppet configuration directory' value=puppet-server-dir help-inline='--puppet-server-dir'}}
-    {{text-f label='Use $environment in the modulepath' value=puppet-server-dynamic-environments help-inline='--puppet-server-dynamic-environments'}}
-    {{text-f label='What version of enc script to deploy. Valid values are \'v2\' for latest, and \'v1\' for Foreman =< 1.2' value=puppet-server-enc-api help-inline='--puppet-server-enc-api'}}
-    {{text-f label='Environments to setup (creates directories). Applies only when $server_dynamic_environments is false' value=puppet-server-environments help-inline='--puppet-server-environments'}}
-    {{text-f label='The owner of the environments directory' value=puppet-server-environments-owner help-inline='--puppet-server-environments-owner'}}
-    {{text-f label='Directory that holds puppet environments' value=puppet-server-envs-dir help-inline='--puppet-server-envs-dir'}}
-    {{text-f label='External nodes classifier executable' value=puppet-server-external-nodes help-inline='--puppet-server-external-nodes'}}
-    {{text-f label='Should foreman receive facts from puppet' value=puppet-server-facts help-inline='--puppet-server-facts'}}
-    {{text-f label='SSL CA of the Foreman server' value=puppet-server-foreman-ssl-ca help-inline='--puppet-server-foreman-ssl-ca'}}
-    {{text-f label='Client certificate for authenticating against Foreman server' value=puppet-server-foreman-ssl-cert help-inline='--puppet-server-foreman-ssl-cert'}}
-    {{text-f label='Key for authenticating against Foreman server' value=puppet-server-foreman-ssl-key help-inline='--puppet-server-foreman-ssl-key'}}
-    {{text-f label='Foreman URL' value=puppet-server-foreman-url help-inline='--puppet-server-foreman-url'}}
-    {{text-f label='Git branch to puppet env mapping for the default post receive hook' value=puppet-server-git-branch-map help-inline='--puppet-server-git-branch-map'}}
-    {{text-f label='Use git repository as a source of modules' value=puppet-server-git-repo help-inline='--puppet-server-git-repo'}}
-    {{text-f label='Git repository path' value=puppet-server-git-repo-path help-inline='--puppet-server-git-repo-path'}}
-    {{text-f label='Name of the puppetmaster group.' value=puppet-server-group help-inline='--puppet-server-group'}}
-    {{text-f label='Apache/httpd service name to notify on configuration changes. Defaults to \'httpd\' based on the default apache module included with foreman-installer.' value=puppet-server-httpd-service help-inline='--puppet-server-httpd-service'}}
-    {{text-f label='Path to puppet site.pp manifest (only when $server_git_repo_path and $server_dynamic_environments are false)' value=puppet-server-manifest-path help-inline='--puppet-server-manifest-path'}}
-    {{text-f label='Custom package name for puppet master' value=puppet-server-package help-inline='--puppet-server-package'}}
-    {{text-f label='If set to true, we will configure apache with passenger. If set to false, we will enable the default puppetmaster service unless service_fallback is set to false. See \'Advanced server parameters\' for more information.' value=puppet-server-passenger help-inline='--puppet-server-passenger'}}
-    {{text-f label='Puppet master port' value=puppet-server-port help-inline='--puppet-server-port'}}
-    {{text-f label='Which template to use for git post hook' value=puppet-server-post-hook-content help-inline='--puppet-server-post-hook-content'}}
-    {{text-f label='Name of a git hook' value=puppet-server-post-hook-name help-inline='--puppet-server-post-hook-name'}}
-    {{text-f label='Where is the puppet code base located' value=puppet-server-puppet-basedir help-inline='--puppet-server-puppet-basedir'}}
-    {{text-f label='Puppet var directory' value=puppet-server-puppet-home help-inline='--puppet-server-puppet-home'}}
-    {{text-f label='What version of report processor to deploy. Valid values are \'v2\' for latest, and \'v1\' for Foreman =< 1.2' value=puppet-server-report-api help-inline='--puppet-server-report-api'}}
-    {{text-f label='List of report types to include on the puppetmaster' value=puppet-server-reports help-inline='--puppet-server-reports'}}
-    {{text-f label='If passenger is not used, do we want to fallback to using the puppetmaster service? Set to false if you disabled passenger and you do NOT want to use the puppetmaster service. Defaults to true.' value=puppet-server-service-fallback help-inline='--puppet-server-service-fallback'}}
-    {{text-f label='SSL directory' value=puppet-server-ssl-dir help-inline='--puppet-server-ssl-dir'}}
-    {{text-f label='Do you use storeconfigs? (note: not required) false if you don\'t, "active_record" for 2.X style db, "puppetdb" for puppetdb' value=puppet-server-storeconfigs-backend help-inline='--puppet-server-storeconfigs-backend'}}
-    {{text-f label='Which template should be used for master configuration' value=puppet-server-template help-inline='--puppet-server-template'}}
-    {{text-f label='Name of the puppetmaster user.' value=puppet-server-user help-inline='--puppet-server-user'}}
-    {{text-f label='Puppet data directory.' value=puppet-server-vardir help-inline='--puppet-server-vardir'}}
-    {{text-f label='Show and report changed files with diff output' value=puppet-show-diff help-inline='--puppet-show-diff'}}
-    {{text-f label='Switch to enable a random amount of time to sleep before each run.' value=puppet-splay help-inline='--puppet-splay'}}
-    {{text-f label='Override the name of the puppet user.' value=puppet-user help-inline='--puppet-user'}}
-    {{text-f label='Specify a specific version of a package to install. The version should be the exact match for your distro. You can also use certain values like \'latest\'.' value=puppet-version help-inline='--puppet-version'}}
+    {{simple-select-f label='Mode to setup the puppet agent'
+             content=puppetModes
+             value=puppet.runmode
+             help-inline='--puppet-runmode'}}
+
+    {{true-false-f label='Install puppet master and client'
+                   isTrue=puppet.server
+                   help-inline='--puppet-server'}}
+
+    {{text-f label='Directory where the application lives'
+             value=puppet.server_app_root
+             help-inline='--puppet-server-app-root'}}
+
+    {{true-false-f label='Provide puppet CA'
+                   isTrue=puppet.server_ca
+                   help-inline='--puppet-server-ca'}}
+
+    {{text-f label='Directory where the application lives'
+             value=puppet.server_app_root
+             help-inline='--puppet-server-app-root'}}
+
+    {{text-f label='The name to use when handling certificates'
+             value=puppet.server_certname
+             help-inline='--puppet-server-certname'}}
+
+    {{text-f label='Common modules paths'
+             value=puppet.server_common_modules_path
+             help-inline='only when $server_git_repo_path and $server_dynamic_environments are false --puppet-server-common-modules-path'}}
+
+    {{text-f label='Configuration version'
+             value=puppet.server_config_version
+             help-inline='When using git_repo, by default a git describe approach will be installed --puppet-server-config-version'}}
+
+    {{text-f label='Puppet configuration directory'
+             value=puppet.server_dir
+             help-inline='--puppet-server-dir'}}
+
+    {{true-false-f label='Use $environment in the modulepath'
+                   isTrue=puppet.server_dynamic_environments
+                   help-inline='--puppet-server-dynamic-environments'}}
+
+    {{simple-select-f label='Version of enc script to deploy'
+             content=apiVersions
+             value=puppet.server_enc_api
+             help-inline='v2 for latest, v1 for Foreman =< 1.2 --puppet-server-enc-api'}}
+
+    {{text-f label='Environments to setup (creates directories)'
+             value=puppet.server_environments
+             help-inline='applies only when $server_dynamic_environments is false --puppet-server-environments'}}
+
+    {{text-f label='Owner of the environments directory'
+             value=puppet.server_environments_owner
+             help-inline='--puppet-server-environments-owner'}}
+
+    {{text-f label='Directory that holds puppet environments'
+             value=puppet.server_envs_dir
+             help-inline='--puppet-server-envs-dir'}}
+
+    {{text-f label='External nodes classifier executable'
+             value=puppet.server_external_nodes
+             help-inline='--puppet-server-external-nodes'}}
+
+    {{true-false-f label='Receive facts from puppet'
+                   isTrue=puppet.server_facts
+                   help-inline='--puppet-server-facts'}}
+
+    {{text-f label='SSL CA of the Foreman server'
+             value=puppet.server_foreman_ssl_ca
+             help-inline='--puppet-server-foreman-ssl-ca'}}
+
+    {{text-f label='Client certificate for authenticating against Foreman server'
+             value=puppet.server_foreman_ssl_cert
+             help-inline='--puppet-server-foreman-ssl-cert'}}
+
+    {{text-f label='Key for authenticating against Foreman server'
+             value=puppet.server_foreman_ssl_key
+             help-inline='--puppet-server-foreman-ssl-key'}}
+
+    {{text-f label='Foreman URL'
+             value=puppet.server_foreman_url
+             help-inline='--puppet-server-foreman-url'}}
+
+    {{text-f label='Git branch to puppet env mapping for the default post receive hook'
+             value=puppet.server_git_branch_map
+             help-inline='--puppet-server-git-branch-map'}}
+
+    {{true-false-f label='Use git repository as a source of modules'
+                   isTrue=puppet.server_git_repo
+                   help-inline='--puppet-server-git-repo'}}
+
+    {{text-f label='Git repository path'
+             value=puppet.server_git_repo_path
+             help-inline='--puppet-server-git-repo-path'}}
+
+    {{text-f label='Puppetmaster group name'
+             value=puppet.server_group
+             help-inline='--puppet-server-group'}}
+
+    {{text-f label='Apache/httpd service name to notify on configuration changes'
+             value=puppet.server_httpd_service
+             help-inline='--puppet-server-httpd-service'}}
+
+    {{text-f label='Path to puppet site.pp manifest'
+             value=puppet.server_manifest_path
+             help-inline='only when $server_git_repo_path and $server_dynamic_environments are false --puppet-server-manifest-path'}}
+
+    {{text-f label='Package name for puppet master'
+             value=puppet.server_package
+             help-inline='--puppet-server-package'}}
+
+    {{true-false-f label='Configure apache with passenger'
+                   isTrue=puppet.server_passenger
+                   help-inline='If set to false, we will enable the default puppetmaster service unless service_fallback is set to false. See \'Advanced server parameters\' --puppet-server-passenger'}}
+
+    {{text-f label='Puppet master port'
+             value=puppet.server_port
+             help-inline='--puppet-server-port'}}
+
+    {{text-f label='Template to use for git post hook'
+             value=puppet.server_post_hook_content
+             help-inline='--puppet-server-post-hook-content'}}
+
+    {{text-f label='Git hook name'
+             value=puppet.server_post_hook_name
+             help-inline='--puppet-server-post-hook-name'}}
+
+    {{text-f label='Puppet code base directory'
+             value=puppet.server_puppet_basedir
+             help-inline='--puppet-server-puppet-basedir'}}
+
+    {{text-f label='Puppet var directory'
+             value=puppet.server_puppet_home
+             help-inline='--puppet-server-puppet-home'}}
+
+    {{simple-select-f label='Version of report processor to deploy'
+             content=apiVersions
+             value=puppet.server_report_api
+             help-inline='v2 for latest, v1 for Foreman =< 1.2 --puppet-server-report-api'}}
+
+    {{text-f label='List of report types to include on the puppetmaster'
+             value=puppet.server_reports
+             help-inline='--puppet-server-reports'}}
+
+    {{true-false-f label='Fallback to using the puppetmaster service if passenger is not used'
+                   isTrue=puppet.server_service_fallback
+                   help-inline='Set to false if you disabled passenger and you do NOT want to use the puppetmaster service --puppet-server-service-fallback'}}
+
+    {{text-f label='SSL directory'
+             value=puppet.server_ssl_dir
+             help-inline='--puppet-server-ssl-dir'}}
+
+    {{true-false-f label='Use storeconfigs?'
+                   isTrue=useStoreconfigs
+                   help-inline='--puppet-server-storeconfigs-backend'}}
+
+    {{#if useStoreconfigs}}
+      {{simple-select-f label=''
+               content=configTypes
+               value=puppet.server_storeconfigs_backend
+               prompt='Select type'
+               }}
+    {{/if}}
+
+    {{text-f label='Template for master configuration'
+             value=puppet.server_template
+             help-inline='--puppet-server-template'}}
+
+    {{text-f label='Puppetmaster user'
+             value=puppet.server_user
+             help-inline='--puppet-server-user'}}
+
+    {{text-f label='Puppet data directory'
+             value=puppet.server_vardir
+             help-inline='--puppet-server-vardir'}}
+
+    {{true-false-f label='Show and report changed files with diff output'
+                   isTrue=puppet.show_diff
+                   help-inline='--puppet-show-diff'}}
+
+    {{true-false-f label='Enable a random amount of time to sleep before each run'
+                   isTrue=puppet.splay
+                   help-inline='--puppet-splay'}}
+
+    {{text-f label='Puppet user'
+             value=puppet.user
+             help-inline='--puppet-user'}}
+
+    {{text-f label='Specify a specific version of a package to install'
+             value=puppet.version
+             help-inline='The version should be the exact match for your distro. You can also use certain values like \'latest\' --puppet-version'}}
 
     </form>
   </div>
