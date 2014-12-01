@@ -1,64 +1,230 @@
 <div class='row'>
   <div class='col-md-12'>
     <form class='form form-horitzonal' role='form'>
-    {{text-f label='Path to autosign configuration file' value=foreman-proxy-autosign-location help-inline='--foreman-proxy-autosign-location'}}
-    {{text-f label='Use BMC' value=foreman-proxy-bmc help-inline='--foreman-proxy-bmc'}}
-    {{text-f label='BMC default provider' value=foreman-proxy-bmc-default-provider help-inline='--foreman-proxy-bmc-default-provider'}}
-    {{text-f label='No need to change anything here by default if set to true, no repo will be added by this module, letting you to set it to some custom location.' value=foreman-proxy-custom-repo help-inline='--foreman-proxy-custom-repo'}}
-    {{text-f label='Use DHCP' value=foreman-proxy-dhcp help-inline='--foreman-proxy-dhcp'}}
-    {{text-f label='DHCP config file path' value=foreman-proxy-dhcp-config help-inline='--foreman-proxy-dhcp-config'}}
-    {{text-f label='DHCP pool gateway' value=foreman-proxy-dhcp-gateway help-inline='--foreman-proxy-dhcp-gateway'}}
-    {{text-f label='DHCP listen interface' value=foreman-proxy-dhcp-interface help-inline='--foreman-proxy-dhcp-interface'}}
-    {{text-f label='DHCP key name' value=foreman-proxy-dhcp-key-name help-inline='--foreman-proxy-dhcp-key-name'}}
-    {{text-f label='DHCP password' value=foreman-proxy-dhcp-key-secret help-inline='--foreman-proxy-dhcp-key-secret'}}
-    {{text-f label='DHCP leases file' value=foreman-proxy-dhcp-leases help-inline='--foreman-proxy-dhcp-leases'}}
-    {{text-f label='DHCP is managed by Foreman proxy' value=foreman-proxy-dhcp-managed help-inline='--foreman-proxy-dhcp-managed'}}
-    {{text-f label='DHCP nameservers' value=foreman-proxy-dhcp-nameservers help-inline='--foreman-proxy-dhcp-nameservers'}}
-    {{text-f label='Space-separated DHCP pool range' value=foreman-proxy-dhcp-range help-inline='--foreman-proxy-dhcp-range'}}
-    {{text-f label='Foreman proxy install directory' value=foreman-proxy-dir help-inline='--foreman-proxy-dir'}}
-    {{text-f label='Use DNS' value=foreman-proxy-dns help-inline='--foreman-proxy-dns'}}
-    {{text-f label='DNS forwarders' value=foreman-proxy-dns-forwarders help-inline='--foreman-proxy-dns-forwarders'}}
-    {{text-f label='DNS interface' value=foreman-proxy-dns-interface help-inline='--foreman-proxy-dns-interface'}}
-    {{text-f label='DNS is managed by Foreman proxy' value=foreman-proxy-dns-managed help-inline='--foreman-proxy-dns-managed'}}
-    {{text-f label='DNS reverse zone name' value=foreman-proxy-dns-reverse help-inline='--foreman-proxy-dns-reverse'}}
-    {{text-f label='Address of DNS server to manage' value=foreman-proxy-dns-server help-inline='--foreman-proxy-dns-server'}}
-    {{text-f label='DNS zone name' value=foreman-proxy-dns-zone help-inline='--foreman-proxy-dns-zone'}}
-    {{text-f label='Base Foreman URL used for REST interaction' value=foreman-proxy-foreman-base-url help-inline='--foreman-proxy-foreman-base-url'}}
-    {{text-f label='Turn on/off gpg check in repo files (effective only on RedHat family systems)' value=foreman-proxy-gpgcheck help-inline='--foreman-proxy-gpgcheck'}}
-    {{text-f label='DNS server keyfile path' value=foreman-proxy-keyfile help-inline='--foreman-proxy-keyfile'}}
+    {{text-f label='Path to autosign configuration file'
+             value=foreman_proxy.autosign_location
+             help-inline='--foreman-proxy-autosign-location'}}
 
+    {{true-false-f label='Use BMC'
+                   isTrue=foreman_proxy.bmc
+                   help-inline='--foreman-proxy-bmc'}}
 
-    {{text-f label='Foreman proxy log file' value=foreman-proxy-log help-inline='--foreman-proxy-log'}}
-    {{text-f label='Whether to manage File[\'/etc/sudoers.d\'] or not. When reusing this module, this may be disabled to let a dedicated sudo module manage it instead.' value=foreman-proxy-manage-sudoersd help-inline='--foreman-proxy-manage-sudoersd'}}
-    {{text-f label='OAuth key to be used for REST interaction' value=foreman-proxy-oauth-consumer-key help-inline='--foreman-proxy-oauth-consumer-key'}}
-    {{text-f label='OAuth secret to be used for REST interaction' value=foreman-proxy-oauth-consumer-secret help-inline='--foreman-proxy-oauth-consumer-secret'}}
-    {{text-f label='User to be used for REST interaction' value=foreman-proxy-oauth-effective-user help-inline='--foreman-proxy-oauth-effective-user'}}
-    {{text-f label='Port on which will foreman proxy listen' value=foreman-proxy-port help-inline='--foreman-proxy-port'}}
-    {{text-f label='Groups of Foreman proxy user' value=foreman-proxy-puppet-group help-inline='--foreman-proxy-puppet-group'}}
-    {{text-f label='Use Puppet CA' value=foreman-proxy-puppetca help-inline='--foreman-proxy-puppetca'}}
-    {{text-f label='Puppet CA command to be allowed in sudoers' value=foreman-proxy-puppetca-cmd help-inline='--foreman-proxy-puppetca-cmd'}}
-    {{text-f label='Puppet var directory' value=foreman-proxy-puppetdir help-inline='--foreman-proxy-puppetdir'}}
-    {{text-f label='Enable puppet run/kick management' value=foreman-proxy-puppetrun help-inline='--foreman-proxy-puppetrun'}}
-    {{text-f label='Puppet run/kick command to be allowed in sudoers' value=foreman-proxy-puppetrun-cmd help-inline='--foreman-proxy-puppetrun-cmd'}}
-    {{text-f label='Set puppet_provider to handle puppet run/kick via mcollective' value=foreman-proxy-puppetrun-provider help-inline='--foreman-proxy-puppetrun-provider'}}
-    {{text-f label='Register proxy back in Foreman' value=foreman-proxy-register-in-foreman help-inline='--foreman-proxy-register-in-foreman'}}
-    {{text-f label='Proxy name which is registered in Foreman' value=foreman-proxy-registered-name help-inline='--foreman-proxy-registered-name'}}
-    {{text-f label='Proxy URL which is registered in Foreman' value=foreman-proxy-registered-proxy-url help-inline='--foreman-proxy-registered-proxy-url'}}
-    {{text-f label='This can be stable, rc, or nightly' value=foreman-proxy-repo help-inline='--foreman-proxy-repo'}}
-    {{text-f label='Enable SSL, ensure proxy is added with "https://" protocol if true' value=foreman-proxy-use-vhost help-inline='--foreman-proxy-use-vhost'}}
-    {{text-f label='If CA is specified, remote Foreman host will be verified' value=foreman-proxy-ssl-ca help-inline='--foreman-proxy-ssl-ca'}}
-    {{text-f label='Used to communicate to Foreman' value=foreman-proxy-ssl-cert help-inline='--foreman-proxy-ssl-cert'}}
-    {{text-f label='Corresponding key to a certificate' value=foreman-proxy-ssl-key help-inline='--foreman-proxy-ssl-key'}}
-    {{text-f label='Puppet CA ssl directory' value=foreman-proxy-ssldir help-inline='--foreman-proxy-ssldir'}}
-    {{text-f label='Use TFTP' value=foreman-proxy-tftp help-inline='--foreman-proxy-tftp'}}
-    {{text-f label='Directories to be create in $tftp_root' value=foreman-proxy-tftp-dirs help-inline='--foreman-proxy-tftp-dirs'}}
-    {{text-f label='TFTP root directory' value=foreman-proxy-tftp-root help-inline='--foreman-proxy-tftp-root'}}
-    {{text-f label='Defines the TFTP Servername to use, overrides the name in the subnet declaration' value=foreman-proxy-tftp-servername help-inline='--foreman-proxy-tftp-servername'}}
-    {{text-f label='Syslinux files to install on TFTP (copied from $tftp_syslinux_root)' value=foreman-proxy-tftp-syslinux-files help-inline='--foreman-proxy-tftp-syslinux-files'}}
-    {{text-f label='Directory that hold syslinux files' value=foreman-proxy-tftp-syslinux-root help-inline='--foreman-proxy-tftp-syslinux-root'}}
-    {{text-f label='Only hosts listed will be permitted, empty array to disable authorization' value=foreman-proxy-trusted-hosts help-inline='--foreman-proxy-trusted-hosts'}}
-    {{text-f label='Add a file to /etc/sudoers.d (true) or uses augeas (false)' value=foreman-proxy-use-sudoersd help-inline='--foreman-proxy-use-sudoersd'}}
-    {{text-f label='User under which foreman proxy will run' value=foreman-proxy-user help-inline='--foreman-proxy-user'}}
+    {{text-f label='BMC default provider'
+             value=foreman_proxy.bmc_default_provider
+             help-inline='--foreman-proxy-bmc-default-provider'}}
+
+    {{true-false-f label='Custom Repo'
+                   isTrue=foreman_proxy.custom_repo
+                   help-inline='No need to change anything here by default if set to true, no repo will be added by this module, letting you to set it to some custom location --foreman-proxy-custom-repo'}}
+
+    {{true-false-f label='Use DHCP'
+                   isTrue=foreman_proxy.dhcp
+                   help-inline='--foreman-proxy-dhcp'}}
+
+    {{text-f label='DHCP config file path'
+             value=foreman_proxy.dhcp_config
+             help-inline='--foreman-proxy-dhcp-config'}}
+
+    {{text-f label='DHCP pool gateway'
+             value=foreman_proxy.dhcp_gateway
+             help-inline='--foreman-proxy-dhcp-gateway'}}
+
+    {{text-f label='DHCP listen interface'
+             value=foreman_proxy.dhcp_interface
+             help-inline='--foreman-proxy-dhcp-interface'}}
+
+    {{text-f label='DHCP key name'
+             value=foreman_proxy.dhcp_key_name
+             help-inline='--foreman-proxy-dhcp-key-name'}}
+
+    {{text-f label='DHCP password'
+             value=foreman_proxy.dhcp_key_secret
+             help-inline='--foreman-proxy-dhcp-key-secret'}}
+
+    {{text-f label='DHCP leases file'
+             value=foreman_proxy.dhcp_leases
+             help-inline='--foreman-proxy-dhcp-leases'}}
+
+    {{text-f label='DHCP nameservers'
+             value=foreman_proxy.dhcp_nameservers
+             help-inline='--foreman-proxy-dhcp-nameservers'}}
+
+    {{true-false-f label='DHCP is managed by Foreman proxy'
+                   isTrue=foreman_proxy.dhcp_managed
+                   help-inline='--foreman-proxy-dhcp-managed'}}
+
+    {{true-false-f label='Space-separated DHCP pool range'
+                   isTrue=foreman_proxy.dhcp_range
+                   help-inline='--foreman-proxy-dhcp-range'}}
+
+    {{text-f label='Foreman proxy install directory'
+             value=foreman_proxy.dir
+             help-inline='--foreman-proxy-dir'}}
+
+    {{true-false-f label='Use DNS'
+                   isTrue=foreman_proxy.dns
+                   help-inline='--foreman-proxy-dns'}}
+
+    {{text-f label='DNS forwarders'
+             value=foreman_proxy.dns_forwarders
+             help-inline='--foreman-proxy-dns-forwarders'}}
+
+    {{text-f label='DNS interface'
+             value=foreman_proxy.dns_interface
+             help-inline='--foreman-proxy-dns-interface'}}
+
+    {{true-false-f label='DNS is managed by Foreman proxy'
+                   isTrue=foreman_proxy.dns_managed
+                   help-inline='--foreman-proxy-dns-managed'}}
+
+    {{text-f label='DNS reverse zone name'
+             value=foreman_proxy.dns_reverse
+             help-inline='--foreman-proxy-dns-reverse'}}
+
+    {{text-f label='Address of DNS server to manage'
+             value=foreman_proxy.dns_server
+             help-inline='--foreman-proxy-dns-server'}}
+
+    {{text-f label='DNS zone name'
+             value=foreman_proxy.dns_zone
+             help-inline='--foreman-proxy-dns-zone'}}
+
+    {{text-f label='Base Foreman URL used for REST interaction'
+             value=foreman_proxy.foreman_base_url
+             help-inline='--foreman-proxy-foreman-base-url'}}
+
+    {{true-false-f label='Enable gpg check in repo files'
+                   isTrue=foreman_proxy.gpgcheck
+                   help-inline='Effective only on RedHat family systems --foreman-proxy-gpgcheck'}}
+
+    {{text-f label='DNS server keyfile path'
+             value=foreman_proxy.keyfile
+             help-inline='--foreman-proxy-keyfile'}}
+
+    {{text-f label='Foreman proxy log file'
+             value=foreman_proxy.log
+             help-inline='--foreman-proxy-log'}}
+
+    {{true-false-f label='Manage File /etc/sudoers.d'
+                   isTrue=foreman_proxy.gpgcheck
+                   help-inline='This may be disabled to let a dedicated sudo module manage it instead --foreman-proxy-manage-sudoersd'}}
+
+    {{text-f label='OAuth key to be used for REST interaction'
+             value=foreman_proxy.oauth_consumer_key
+             help-inline='--foreman-proxy-oauth-consumer-key'}}
+
+    {{text-f label='OAuth secret to be used for REST interaction'
+             value=foreman_proxy.oauth_consumer_secret
+             help-inline='--foreman-proxy-oauth-consumer-secret'}}
+
+    {{text-f label='User to be used for REST interaction'
+             value=foreman_proxy.oauth_effective_user
+             help-inline='--foreman-proxy-oauth-effective-user'}}
+
+    {{text-f label='Port on which will foreman proxy listen'
+             value=foreman_proxy.port
+             help-inline='--foreman-proxy-port'}}
+
+    {{text-f label='Groups of Foreman proxy user'
+             value=foreman_proxy.puppet_group
+             help-inline='--foreman-proxy-puppet-group'}}
+
+    {{true-false-f label='Use Puppet CA'
+                   isTrue=foreman_proxy.puppetca
+                   help-inline='--foreman-proxy-manage-puppetca'}}
+
+    {{text-f label='Puppet CA command to be allowed in sudoers'
+             value=foreman_proxy.puppetca_cmd
+             help-inline='--foreman-proxy-puppet-puppetca-cmd'}}
+
+    {{text-f label='Puppet var directory'
+             value=foreman_proxy.puppetdir
+             help-inline='--foreman-proxy-puppet-puppetdir'}}
+
+    {{true-false-f label='Enable puppet run/kick management'
+                   isTrue=foreman_proxy.puppetrun
+                   help-inline='--foreman-proxy-manage-puppetrun'}}
+
+    {{text-f label='Puppet run/kick command to be allowed in sudoers'
+             value=foreman_proxy.puppetrun_cmd
+             help-inline='--foreman-proxy-puppetrun-cmd'}}
+
+    {{text-f label='Set puppet_provider to handle puppet run/kick via mcollective'
+             value=foreman_proxy.puppetrun_provider
+             help-inline='--foreman-proxy-puppetrun-provider'}}
+
+    {{true-false-f label='Register proxy back in Foreman'
+                   isTrue=foreman_proxy.register_in_foreman
+                   help-inline='--foreman-proxy-register-in-foreman'}}
+
+    {{text-f label='Proxy name which is registered in Foreman'
+             value=foreman_proxy.registered_name
+             help-inline='--foreman-proxy-registered-name'}}
+
+    {{text-f label='Proxy URL which is registered in Foreman'
+             value=foreman_proxy.registered_proxy_url
+             help-inline='--foreman-proxy-registered-proxy-url'}}
+
+    {{simple-select-f label='Proxy repo'
+             content=repoTypes
+             value=foreman_proxy.repo
+             help-inline='--foreman-proxy-repo'}}
+
+    {{true-false-f label='Enable SSL'
+                   isTrue=foreman_proxy.ssl
+                   help-inline='ensure proxy is added with "https://" protocol if true --foreman-proxy-ssl'}}
+
+    {{text-f label='If CA is specified, remote Foreman host will be verified'
+             value=foreman_proxy.ssl_ca
+             help-inline='--foreman-proxy-ssl-ca'}}
+
+    {{text-f label='Used to communicate to Foreman'
+             value=foreman_proxy.ssl_cert
+             help-inline='--foreman-proxy-ssl-cert'}}
+
+    {{text-f label='Corresponding key to a certificate'
+             value=foreman_proxy.ssl_key
+             help-inline='--foreman-proxy-ssl-key'}}
+
+    {{text-f label='Puppet CA ssl directory'
+             value=foreman_proxy.ssldir
+             help-inline='--foreman-proxy-ssldirkey'}}
+
+    {{true-false-f label='Use TFTP'
+                   isTrue=foreman_proxy.tftp
+                   help-inline='--foreman-proxy-tftps'}}
+
+    {{text-f label='Directories to be create in $tftp_root'
+             value=foreman_proxy.tftp_dirs
+             help-inline='--foreman-proxy-tftp-dirs'}}
+
+    {{text-f label='TFTP root directory'
+             value=foreman_proxy.tftp_root
+             help-inline='--foreman-proxy-tftp-root'}}
+
+    {{text-f label='TFTP Servername'
+             value=foreman_proxy.tftp_servername
+             help-inline='overrides the name in the subnet declaration --foreman-proxy-tftp-servername'}}
+
+    {{text-f label='Syslinux files to install on TFTP'
+             value=foreman_proxy.tftp_syslinux_files
+             help-inline='copied from $tftp_syslinux_root --foreman-proxy-tftp-syslinux-files'}}
+
+    {{text-f label='Directory that hold syslinux files'
+             value=foreman_proxy.tftp_syslinux_root
+             help-inline='--foreman-proxy-tftp-syslinux-root'}}
+
+    {{text-f label='Trusted hosts'
+             value=foreman_proxy.trusted_hosts
+             help-inline='Only hosts listed will be permitted, empty array to disable authorization --foreman-proxy-trusted-hosts'}}
+
+    {{true-false-f label='Add a file to /etc/sudoers.d (true) or uses augeas (false)'
+                   isTrue=foreman_proxy.use_sudoersd
+                   help-inline='--foreman-proxy-use-sudoersd'}}
+
+    {{text-f label='User under which foreman proxy will run'
+             value=foreman_proxy.user
+             help-inline='--foreman-proxy-user'}}
 
     </form>
   </div>

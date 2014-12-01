@@ -1,23 +1,79 @@
 <div class='row'>
   <div class='col-md-12'>
     <form class='form form-horitzonal' role='form'>
-    {{text-f label='Should a puppet agent be installed' value=puppet-agent help-inline='--puppet-agent'}}
-    {{text-f label='Run the agent in noop mode' value=puppet-agent-noop help-inline='--puppet-agent-noop'}}
-    {{text-f label='Use a custom template for the agent puppet configuration.' value=puppet-agent-template help-inline='--puppet-agent-template'}}
-    {{text-f label='Use a custom template for the auth configuration.' value=puppet-auth-template help-inline='--puppet-auth-template'}}
-    {{text-f label='Use a different ca server. Should be either a string with the location of the ca_server or \'false\'.' value=puppet-ca-server help-inline='--puppet-ca-server'}}
-    {{text-f label='The file in which puppet agent stores a list of the classes associated with the retrieved configuration.' value=puppet-classfile help-inline='--puppet-classfile'}}
-    {{text-f label='Install a custom package to provide the puppet client' value=puppet-client-package help-inline='--puppet-client-package'}}
-    {{text-f label='How long the client should wait for the configuration to be retrieved before considering it a failure.' value=puppet-configtimeout help-inline='--puppet-configtimeout'}}
-    {{text-f label='Specify command to launch when runmode is set \'cron\'.' value=puppet-cron-cmd help-inline='--puppet-cron-cmd'}}
-    {{text-f label='Override the puppet directory.' value=puppet-dir help-inline='--puppet-dir'}}
-    {{text-f label='Override the name of the puppet group.' value=puppet-group help-inline='--puppet-group'}}
-    {{text-f label='Should the puppet agent listen for connections.' value=puppet-listen help-inline='--puppet-listen'}}
-    {{text-f label='Use a custom template for the main puppet configuration.' value=puppet-main-template help-inline='--puppet-main-template'}}
-    {{text-f label='Use a custom template for the nsauth configuration.' value=puppet-nsauth-template help-inline='--puppet-nsauth-template'}}
-    {{text-f label='Enable pluginsync.' value=puppet-pluginsync help-inline='--puppet-pluginsync'}}
-    {{text-f label='Override the port of the master we connect to.' value=puppet-port help-inline='--puppet-port'}}
-    {{text-f label='Set up the interval (in seconds) to run the puppet agent.' value=puppet-runinterval help-inline='--puppet-runinterval'}}
+
+    {{true-false-f label='Install puppet agent'
+                   isTrue=puppet.agent
+                   help-inline='--puppet-agent'}}
+
+    {{true-false-f label='Run the agent in noop mode'
+                   isTrue=puppet.agent_noop
+                   help-inline='--puppet-agent-noop'}}
+
+    {{text-f label='Template for the agent puppet configuration'
+             value=puppet.agent_template
+             help-inline='--puppet-agent-template'}}
+
+    {{text-f label='Template for the agent puppet configuration'
+             value=puppet.agent_template
+             help-inline='--puppet-agent-template'}}
+
+    {{text-f label='Different CA server'
+             value=puppet.ca_server
+             help-inline='Should be either a string with the location of the ca_server or \'false\' --puppet-ca-server'}}
+
+    {{text-f label='Classes file'
+             value=puppet.classfile
+             help-inline='The file in which puppet agent stores a list of the classes associated with the retrieved configuration --puppet-classfile'}}
+
+    {{text-f label='Install a custom package to provide the puppet client'
+             value=puppet.client_package
+             help-inline='--puppet-client-package'}}
+
+    {{text-f label='Timeout'
+             value=puppet.configtimeout
+             help-inline='How long the client should wait for the configuration to be retrieved before considering it a failure --puppet-configtimeout'}}
+
+    {{text-f label='Command to launch when runmode is set \'cron\''
+             value=puppet.cron_cmd
+             help-inline='--puppet-cron-cmd'}}
+
+    {{text-f label='Puppet directory'
+             value=puppet.dir
+             help-inline='--puppet-dir'}}
+
+    {{text-f label='Puppet group name'
+             value=puppet.group
+             help-inline='--puppet-group'}}
+
+    {{true-false-f label='Puppet agent should listen for connections'
+                   isTrue=puppet.listen
+                   help-inline='--puppet-listen'}}
+
+    {{text-f label='Template for the main puppet configuration'
+             value=puppet.main_template
+             help-inline='--puppet-main-template'}}
+
+    {{text-f label='Template for the nsauth configuration'
+             value=puppet.nsauth_template
+             help-inline='--puppet-nsauth-template'}}
+
+    {{true-false-f label='Enable pluginsync'
+                   isTrue=puppet.pluginsync
+                   help-inline='--puppet-pluginsync'}}
+
+    {{text-f label='Puppetmaster port'
+             value=puppet.port
+             help-inline='--puppet-port'}}
+
+    {{text-f label='Interval (in seconds) to run the puppet agent'
+             value=puppet.runinterval
+             help-inline='--puppet-runinterval'}}
+
+<br />
+<br />
+<br />
+<br />
     {{text-f label='Select the mode to setup the puppet agent. Can be either \'cron\' or \'service\'.' value=puppet-runmode help-inline='--puppet-runmode'}}
     {{text-f label='Should a puppet master be installed as well as the client' value=puppet-server help-inline='--puppet-server'}}
     {{text-f label='Directory where the application lives' value=puppet-server-app-root help-inline='--puppet-server-app-root'}}

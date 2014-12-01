@@ -1,47 +1,172 @@
 <div class='row'>
   <div class='col-md-12'>
     <form class='form form-horitzonal' role='form'>
-    {{text-f label='Name of foreman root directory' value=app_root help-inline='--foreman-app-root'}}
-    {{text-f label='Enable users authentication' value=authentication help-inline='--foreman-authentication (default user:admin pw:changeme)'}}
-    {{text-f label='If disabled the EPEL repo will not be configured on RedHat family systems' value=foreman-configure-epel-repo help-inline='--foreman-configure-epel-repo'}}
-    {{text-f label='If disabled the the SCL repo will not be configured on Red Hat clone systems. (Currently only installs repos for CentOS and Scientific' value=foreman-configure-scl-repo help-inline='--foreman-configure-scl-repo'}}
-    {{text-f label='No need to change anything here by default if set to true, no repo will be added by this module, letting you to set it to some custom location' value=foreman-custom-repo help-inline='--foreman-custom-repo'}}
+      {{text-f label='Name of foreman root directory'
+               value=foreman.app_root
+               help-inline='--foreman-app-root'}}
+
+      {{true-false-f label='Enable users authentication'
+                     isTrue=foreman.authentication
+                     help-inline='(default user:admin pw:changeme) --foreman-authentication '}}
+
+      {{true-false-f label='Configure EPEL Repo'
+                     isTrue=foreman.configure_epel_repo
+                     help-inline='If disabled the EPEL repo will not be configured on RedHat family systems --foreman-configure-epel-repo'}}
+
+      {{true-false-f label='Configure SCL Repo'
+                     isTrue=foreman.configure_scl_repo
+                     help-inline='If disabled the the SCL repo will not be configured on Red Hat clone systems. (Currently only installs repos for CentOS and Scientific) --foreman-configure-scl-repo'}}
+
+      {{true-false-f label='Custom Repo'
+                     isTrue=foreman.custom_repo
+                     help-inline='No need to change anything here by default if set to true, no repo will be added by this module, letting you to set it to some custom location --foreman-custom-repo'}}
+
 <hr />
-    {{text-f label='Database "production" adapter' value=db_adapter help-inline='--foreman-db-adapter'}}
-    {{text-f label='Database "production" database (e.g. foreman)' value=foreman-db-database help-inline='--foreman-db-database'}}
-    {{text-f label='Database "production" host' value=foreman-db-host help-inline='--foreman-db-host'}}
-    {{text-f label='if enabled, will install and configure the database server on this host' value=foreman-db-manage help-inline='--foreman-db-manage'}}
-    {{text-f label='Database "production" password (default is random)' value=foreman-db-password help-inline='--foreman-db-password'}}
-    {{text-f label='Database "production" port' value=foreman-db-port help-inline='--foreman-db-port'}}
-    {{text-f label='Database "production" ssl mode' value=foreman-db-sslmode help-inline='--foreman-db-sslmode'}}
-    {{text-f label='Database "production" ssl type (valid types: mysql/postgresql/sqlite)' value=foreman-db-type help-inline='--foreman-db-type'}}
-    {{text-f label='Database "production" user (e.g. foreman)' value=db_username help-inline='--foreman-db-username'}}
-    {{text-f label='Rails environment of foreman' value=foreman-environment help-inline='--foreman-environment'}}
-    {{text-f label='URL on which foreman is going to run' value=foreman-foreman-url help-inline='--foreman-foreman-url'}}
-    {{text-f label='turn on/off gpg check in repo files (effective only on RedHat family systems)' value=foreman-gpgcheck help-inline='--foreman-gpgcheck'}}
-    {{text-f label='Primary group for the Foreman user' value=foreman-group help-inline='--foreman-group'}}
-    {{text-f label='Enable locations?' value=foreman-locations-enabled help-inline='--foreman-locations-enabled'}}
-    {{text-f label='Enable OAuth authentication for REST API' value=foreman-oauth-active help-inline='--foreman-oauth-active'}}
-    {{text-f label='OAuth consumer key' value=foreman-oauth-consumer-key help-inline='--foreman-oauth-consumer-key'}}
-    {{text-f label='OAuth consumer secret' value=foreman-oauth-consumer-secret help-inline='--foreman-oauth-consumer-secret'}}
-    {{text-f label='Should foreman use the foreman_user header to identify API user?' value=foreman-oauth-consumer-map-users help-inline='--foreman-oauth-consumer-map-users'}}
-    {{text-f label='Enable organizations?' value=foreman-organizations-enabled help-inline='--foreman-organizations-enabled'}}
-    {{text-f label='Configure foreman via apache and passenger' value=foreman-passenger help-inline='--foreman-passenger'}}
-    {{text-f label='Defines which network interface passenger should listen on, undef means all interfaces' value=foreman-passenger-interface help-inline='--foreman-passenger-interface'}}
-    {{text-f label='Software collection name (on RHEL currently "ruby193", undef on others)' value=foreman-passenger-scl help-inline='--foreman-passenger-scl'}}
-    {{text-f label='Puppet home directory' value=foreman-puppet-home help-inline='--foreman-puppet-home'}}
-    {{text-f label='This can be stable, rc, or nightly' value=foreman-repo help-inline='--foreman-repo'}}
-    {{text-f label='when undef, foreman-selinux will be installed if SELinux is enabled setting to false/true will override this check (e.g. set to false on 1.1)' value=foreman-selinux help-inline='--foreman-selinux'}}
-    {{text-f label='Defines Apache mod_ssl SSLCertificateChainFile setting in Foreman vhost conf file.' value=foreman-server-ssl-ca help-inline='--foreman-server-ssl-ca'}}
-    {{text-f label='Defines Apache mod_ssl SSLCertificateFile setting in Foreman vhost conf file.' value=foreman-server-ssl-cert help-inline='--foreman-server-ssl-cert'}}
-    {{text-f label='Defines Apache mod_ssl SSLCertificateKeyFile setting in Foreman vhost conf file.
---foreman-ssl  Enable and set require_ssl in Foreman settings (note: requires passenger, SSL does not apply to kickstarts)' value=foreman-server-ssl-key help-inline='--foreman-server-ssl-key'}}
-    {{text-f label='Defines Apache mod_ssl SSLCertificateKeyFile setting in Foreman vhost conf file.' value=
-foreman-ssl  help-inline='--foreman-unattended'}}
-    {{text-f label='Enclose apache configuration in' value=foreman-use-vhost  help-inline='--foreman-use-vhost'}}
-    {{text-f label='User under which foreman will run' value=foreman-user  help-inline='--foreman-user'}}
-    {{text-f label='Additional groups for the Foreman user' value=foreman-user-groups  help-inline='--foreman-user-groups'}}
-    {{text-f label='foreman package version, it\'s passed to ensure parameter of package resource can be set to specific version number, \'latest\', \'present\' etc.' value=foreman-version  help-inline='--foreman-version'}}
+      {{text-f label='Rails environment of foreman'
+               value=foreman.environment
+               help-inline='--foreman-environment'}}
+
+      {{text-f label='URL on which foreman is going to run'
+               value=foreman.foreman_url
+               help-inline='--foreman-foreman-url'}}
+
+      {{true-false-f label='Enable gpg check in repo files'
+                     isTrue=foreman.gpgcheck
+                     help-inline='Effective only on RedHat family systems --foreman-gpgcheck'}}
+
+      {{text-f label='Primary group for the Foreman user'
+               value=foreman.group
+               help-inline='--foreman-group'}}
+
+      {{true-false-f label='Enable locations'
+                     isTrue=foreman.locations_enabled
+                     help-inline='--foreman-locations-enabled'}}
+
+      {{true-false-f label='Enable organizations'
+                     isTrue=foreman.organizations_enabled
+                     help-inline='--foreman-organizations-enabled'}}
+
+      {{true-false-f label='Enable OAuth authentication for REST API'
+                     isTrue=foreman.oauth_active
+                     help-inline='--foreman-oauth-active'}}
+
+      {{text-f label='OAuth consumer key'
+               value=foreman.oauth_consumer_key
+               help-inline='--foreman-oauth-consumer-key'}}
+
+      {{text-f label='OAuth consumer secret'
+               value=foreman.oauth_consumer_secret
+               help-inline='--foreman-oauth-consumer-secret'}}
+
+      {{true-false-f label='Use the foreman_user header to identify API user'
+                     isTrue=foreman.oauth_map_users
+                     help-inline='--foreman-oauth-consumer-map-users'}}
+
+      {{true-false-f label='Configure foreman via apache and passenger'
+                     isTrue=foreman.passenger
+                     help-inline='--foreman-passenger'}}
+
+      {{text-f label='Network interface passenger should listen on'
+               value=foreman.passenger_interface
+               help-inline='undef means all interfaces --foreman-passenger-interface'}}
+
+      {{text-f label='Passenger software collection name'
+               value=foreman.passenger_interface
+               help-inline='on RHEL currently "ruby193", undef on others. Deprecated, specify passenger_ruby and passenger_ruby_package instead --foreman-passenger-scl'}}
+
+
+<hr />
+      {{text-f label='Database \'production\' adapter'
+               value=foreman.db_adapter
+               help-inline='--foreman-db-adapter'}}
+
+      {{text-f label='Database \'production\' database'
+               value=foreman.db_database
+               help-inline='--foreman-db-database'}}
+
+      {{text-f label='Database \'production\' host'
+               value=foreman.db_host
+               help-inline='--foreman-db-host'}}
+
+      {{true-false-f label='Database Manage'
+                     isTrue=foreman.db_manage
+                     help-inline='If enabled, will install and configure the database server on this host --foreman-db-manage'}}
+
+      {{text-f label='Database \'production\' password'
+               value=foreman.db_password
+               help-inline='default is random --foreman-db-password'}}
+
+      {{text-f label='Database \'production\' port'
+               value=foreman.db_port
+               help-inline='--foreman-db-port'}}
+
+      {{text-f label='Database \'production\' ssl mode'
+               value=foreman.db_sslmode
+               help-inline='--foreman-db-sslmode'}}
+
+      {{simple-select-f label='Database \'production\' type'
+               content=dbTypes
+               value=foreman.db_type
+               help-inline='--foreman-db-type'}}
+
+      {{text-f label='Database \'production\' user'
+               value=foreman.db_username
+               help-inline='--foreman-db-username'}}
+<hr />
+
+      {{text-f label='Puppet home directory'
+               value=foreman.puppet_home
+               help-inline='--foreman-puppet-home'}}
+
+      {{simple-select-f label='Foreman repo'
+               content=repoTypes
+               value=foreman.repo
+               help-inline='--foreman-repo'}}
+
+      {{text-f label='SELinux'
+               value=foreman.selinux
+               help-inline='when undef, foreman-selinux will be installed if SELinux is enabled setting to false/true will override this check (e.g. set to false on 1.1) --foreman-selinux'}}
+
+      {{text-f label='Apache mod_ssl SSLCACertificateFile setting in Foreman vhost conf file'
+               value=foreman.server_ssl_ca
+               help-inline='--foreman-server-ssl-ca'}}
+
+      {{text-f label='Apache mod_ssl SSLCertificateFile setting in Foreman vhost conf file'
+               value=foreman.server_ssl_cert
+               help-inline='--foreman-server-ssl-cert'}}
+
+      {{text-f label='Apache mod_ssl SSLCertificateChainFile setting in Foreman vhost conf file'
+               value=foreman.server_ssl_chain
+               help-inline='--foreman-server-ssl-chain'}}
+
+      {{text-f label='Apache mod_ssl SSLCertificateKeyFile setting in Foreman vhost conf file.'
+               value=foreman.server_ssl_key
+               help-inline='--foreman-server-ssl-key'}}
+
+      {{true-false-f label='Enable SSL'
+                     isTrue=foreman.ssl
+                     help-inline='Set require_ssl in Foreman settings (note: requires passenger, SSL does not apply to kickstarts) --foreman-ssl'}}
+
+      {{true-false-f label='Should foreman manage host provisioning as well'
+                     isTrue=foreman.unattended
+                     help-inline='--foreman-unattended'}}
+
+      {{true-false-f label='Enclose apache configuration'
+                     isTrue=foreman.use_vhost
+                     help-inline='--foreman-use-vhost'}}
+
+      {{text-f label='User under which foreman will run'
+                     value=foreman.user
+                     help-inline='--foreman-user'}}
+
+      {{text-f label='Additional groups for the Foreman user'
+                     value=foreman.groups
+                     help-inline='--foreman-groups'}}
+
+      {{text-f label='Foreman package version'
+                     value=foreman.version
+                     help-inline='version passed to ensure parameter of package resource can be set to specific version number, \'latest\', \'present\' etc.--foreman-version'}}
+
     </form>
   </div>
 </div>
