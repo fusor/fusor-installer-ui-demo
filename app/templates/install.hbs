@@ -1,0 +1,100 @@
+<div class='row'>
+  <div class='col-md-12'>
+    <h1>Welcome to the {{nameRHCI}} installer!</h1>
+
+    The installer guides you through creating a new Foreman/Katello installation with the appropriote plugins for {{nameRHCI}} deployments.
+    <br />
+    <br />
+  </div>
+</div>
+
+<div class='row' style='height:370px;'>
+
+  <div class='col-md-6'>
+    {{#rchi-item srcImage=imgForeman isChecked=isForeman name=nameSatellite}}
+        Foreman is a complete lifecycle management tool for physical and virtual servers.
+    {{/rchi-item}}
+  </div>
+
+  <div class='col-md-6'>
+    {{#rchi-item srcImage=imgKatello isChecked=isKatello name=nameKatello}}
+        Katello brings the full power of content management alongside the provisioning and configuration capabilities of Foreman.
+    {{/rchi-item}}
+  </div>
+
+</div>
+
+    <h3>Select Plugins</h3>
+    <br />
+
+<div class='row'>
+
+  <div class='col-md-4'>
+    {{#rchi-item isChecked=isDiscovery name="Discovery"}}
+        foreman_plugin_discovery module
+    {{/rchi-item}}
+  </div>
+
+  <div class='col-md-4'>
+    {{#rchi-item isChecked=foreman_plugin_bootdisk name="bootdisk"}}
+        foreman_plugin_bootdisk module
+    {{/rchi-item}}
+  </div>
+
+  <div class='col-md-4'>
+    {{#rchi-item isChecked=foreman_cli name="foreman cli"}}
+        foreman_cli module
+    {{/rchi-item}}
+  </div>
+
+  <div class='col-md-4'>
+    {{#rchi-item isChecked=foreman_plugin_default_hostgroup name="default hostgroup"}}
+        foreman_plugin_default_hostgroup module
+    {{/rchi-item}}
+  </div>
+
+  <div class='col-md-4'>
+    {{#rchi-item isChecked=foreman_plugin_pulp name="pulp"}}
+        foreman_plugin_pulp module
+    {{/rchi-item}}
+  </div>
+
+  <div class='col-md-4'>
+    {{#rchi-item isChecked=foreman_plugin_setup name="setup"}}
+        foreman_cli module
+    {{/rchi-item}}
+  </div>
+
+  <div class='col-md-4'>
+    {{#rchi-item isChecked=foreman_plugin_templates name="templates"}}
+        foreman_plugin_ovirt_provision module
+    {{/rchi-item}}
+  </div>
+
+  <div class='col-md-4'>
+    {{#rchi-item isChecked=foreman_plugin_tasks name="tasks"}}
+        foreman_plugin_tasks module
+    {{/rchi-item}}
+  </div>
+
+  <div class='col-md-4'>
+    {{#rchi-item isChecked=foreman_plugin_hooks name="hooks"}}
+        foreman_plugin_hooks module
+    {{/rchi-item}}
+  </div>
+
+  <div class='col-md-4'>
+    {{#rchi-item isChecked=foreman_plugin_puppetdb name="puppetdb"}}
+        foreman_plugin_puppetdb module
+    {{/rchi-item}}
+  </div>
+
+</div>
+
+<div class='row'>
+  <div class='col-md-12'>
+    <div style='float:right;'>
+      {{#link-to 'foreman' class="btn btn-primary" disabled=disableNext }}Next{{/link-to}}
+    </div>
+  </div>
+</div>

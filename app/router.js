@@ -11,6 +11,7 @@ var Router = Ember.Router.extend({
 
 Router.map(function() {
 
+  this.route('install');
   this.resource('installer', function() {
     this.resource('foreman');
     this.resource('smart-proxy');
