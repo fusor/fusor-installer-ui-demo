@@ -36,6 +36,18 @@
   </div>
 
   <div class='col-md-4'>
+    {{#rchi-item isChecked=foreman_plugin_pulp name="pulp"}}
+        foreman_plugin_pulp module
+    {{/rchi-item}}
+  </div>
+
+  <div class='col-md-4'>
+    {{#rchi-item isChecked=foreman_plugin_setup name="setup"}}
+        foreman_cli module
+    {{/rchi-item}}
+  </div>
+
+  <div class='col-md-4'>
     {{#rchi-item isChecked=foreman_plugin_bootdisk name="bootdisk"}}
         foreman_plugin_bootdisk module
     {{/rchi-item}}
@@ -50,18 +62,6 @@
   <div class='col-md-4'>
     {{#rchi-item isChecked=foreman_plugin_default_hostgroup name="default hostgroup"}}
         foreman_plugin_default_hostgroup module
-    {{/rchi-item}}
-  </div>
-
-  <div class='col-md-4'>
-    {{#rchi-item isChecked=foreman_plugin_pulp name="pulp"}}
-        foreman_plugin_pulp module
-    {{/rchi-item}}
-  </div>
-
-  <div class='col-md-4'>
-    {{#rchi-item isChecked=foreman_plugin_setup name="setup"}}
-        foreman_cli module
     {{/rchi-item}}
   </div>
 

@@ -8,6 +8,7 @@ to your needs.
 
 <br />
 <ul class="wizard">
+  {{#link-to 'network' tagName='li'}}{{step-number value=1}}Network{{/link-to}}
   {{#link-to 'foreman' tagName='li'}}{{step-number value=1}}{{nameSatellite}}{{/link-to}}
   {{#link-to 'smart-proxy' tagName='li'}}{{step-number value=2}}{{nameCapsule}}{{/link-to}}
   {{#link-to 'compute-resources' tagName='li'}}{{step-number value=3}}Compute Resources{{/link-to}}

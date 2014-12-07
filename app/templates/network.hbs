@@ -1,0 +1,23 @@
+<br />
+<div class='row'>
+  <div class='col-md-4'>
+    <table class="table table-bordered small">
+      <thead>
+        <tr>
+          <th> </th>
+          <th> Interface </th>
+        </tr>
+      </thead>
+
+      <tbody>
+      {{#each network in controller.model itemController="network-config"}}
+        {{tr-network net=network selectedNetwork=selectedNetwork}}
+      {{/each}}
+      </tbody>
+    </table>
+  </div>
+
+  <div class='col-md-8'>
+    {{outlet}}
+  </div>
+</div>
