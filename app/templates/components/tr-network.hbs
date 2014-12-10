@@ -1,3 +1,10 @@
-
-  <td width='20px' class="checkmark"> {{#unless isChecked}}{{input type="radio"}}{{/unless}}{{showCheckMark}}</td>
-  <td> {{#link-to 'network-config' net}}{{net.interface_name}}{{/link-to}} </td>
+<td width='20px' class="checkmark">
+  {{#unless isChecked}}
+    {{input type="radio"}}
+  {{else}}
+    {{showCheckMark}}
+  {{/unless}}
+</td>
+<td>
+  {{net.interface_name}}
+</td>

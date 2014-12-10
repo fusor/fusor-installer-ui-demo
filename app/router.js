@@ -12,9 +12,10 @@ var Router = Ember.Router.extend({
 Router.map(function() {
 
   this.route('install');
+
   this.resource('installer', function() {
     this.resource('network', function() {
-      this.resource('network-config', { path: '/network/:network_id' })
+      this.resource('network-config', { path: '/:network_id' })
     });
     this.resource('ssh');
     this.resource('foreman');

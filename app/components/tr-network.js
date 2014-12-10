@@ -37,6 +37,7 @@ export default Ember.Component.extend({
     var net = this.get('net');
     var interface_name = net.get('interface_name');
     this.set('selectedNetwork', interface_name);
+    this.sendAction('action', net);
   },
 
 });

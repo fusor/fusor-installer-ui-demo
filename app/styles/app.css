@@ -101,6 +101,13 @@ td {
   /*font-size:120%;*/
 }
 
+tr.fontwhite td a.active {
+  color:#fff !important;
+  background-color:#428bca !important;
+  text-decoration: none;
+}
+
+
 a {
   cursor: pointer;
 }
